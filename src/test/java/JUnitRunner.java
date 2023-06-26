@@ -11,7 +11,6 @@ import java.util.*;
 /*
 JUnitRunner prende tutti i casi di test registrati e li esegue con JUnitCore
  */
-//TODO:Inserire i casi di test di MantisBT
 public class JUnitRunner {
     public static void main(String[] args) throws IOException {
         runAllTestsInDirectory("src/test/java/MantisBT");

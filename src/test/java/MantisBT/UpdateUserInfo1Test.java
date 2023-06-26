@@ -22,7 +22,7 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class CreateCommentReport1Test {
+public class UpdateUserInfo1Test {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -37,16 +37,18 @@ public class CreateCommentReport1Test {
     driver.quit();
   }
   @Test
-  public void createCommentReport1() {
+  public void updateUserInfo1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
-    driver.manage().window().setSize(new Dimension(766, 640));
-    driver.findElement(By.id("username")).sendKeys("Chris95");
+    driver.manage().window().setSize(new Dimension(1936, 1050));
+    driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.linkText("Quando chiedi la stampa dei fogli excel crasha")).click();
-    driver.findElement(By.id("bugnote_text")).click();
-    driver.findElement(By.id("bugnote_text")).sendKeys("Non riesco a replicare il bug");
-    driver.findElement(By.cssSelector(".widget-toolbox > .btn")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.cssSelector("li:nth-child(1) .menu-text")).click();
+    driver.findElement(By.cssSelector("#resolved .my-buglist-bug:nth-child(1) span > a")).click();
+    driver.findElement(By.linkText("Ivan52")).click();
+    driver.findElement(By.cssSelector("tr:nth-child(3) > td")).click();
+    assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td")).getText(), is("Ivan Capasso"));
   }
 }

@@ -22,7 +22,7 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class CreateDataField1Test {
+public class CreateUser1Test {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -37,41 +37,31 @@ public class CreateDataField1Test {
     driver.quit();
   }
   @Test
-  public void createDataField1() {
+  public void createUser1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(766, 640));
-    driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
+    Thread.sleep(1000);
     driver.findElement(By.id("menu-toggler")).click();
+    Thread.sleep(1000);
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
-    driver.findElement(By.linkText("Gestione campi personalizzati")).click();
-    driver.findElement(By.name("name")).click();
-    driver.findElement(By.name("name")).sendKeys("Data");
+    driver.findElement(By.linkText("Gestione utenti")).click();
+    driver.findElement(By.xpath("//button[@type=\'submit\']")).click();
+    driver.findElement(By.id("user-username")).click();
+    driver.findElement(By.id("user-username")).sendKeys("asda");
+    driver.findElement(By.id("user-realname")).click();
+    driver.findElement(By.id("user-realname")).sendKeys("adsa");
+    driver.findElement(By.id("email-field")).click();
+    driver.findElement(By.id("email-field")).sendKeys("asdasd");
+    driver.findElement(By.id("user-access-level")).click();
+    {
+      WebElement dropdown = driver.findElement(By.id("user-access-level"));
+      dropdown.findElement(By.xpath("//option[. = 'aggiornatore']")).click();
+    }
+    driver.findElement(By.cssSelector("tr:nth-child(6) .lbl")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
-    driver.findElement(By.linkText("Continua")).click();
-    driver.findElement(By.id("custom-field-type")).click();
-    {
-      WebElement dropdown = driver.findElement(By.id("custom-field-type"));
-      dropdown.findElement(By.xpath("//option[. = 'Data']")).click();
-    }
-    driver.findElement(By.cssSelector("tr:nth-child(12) .lbl")).click();
-    driver.findElement(By.cssSelector("tr:nth-child(11) .lbl")).click();
-    driver.findElement(By.cssSelector("tr:nth-child(10) .lbl")).click();
-    {
-      WebElement dropdown = driver.findElement(By.id("custom-field-project-id"));
-      dropdown.findElement(By.xpath("//option[. = 'EasyManager']")).click();
-    }
-    driver.findElement(By.cssSelector(".widget-toolbox:nth-child(3) > .btn")).click();
-    driver.findElement(By.linkText("Continua")).click();
-    driver.findElement(By.linkText("Data")).click();
-    {
-      WebElement dropdown = driver.findElement(By.id("custom-field-project-id"));
-      dropdown.findElement(By.xpath("//option[. = 'EasyManager']")).click();
-    }
-    driver.findElement(By.cssSelector(".widget-toolbox:nth-child(1) > .btn")).click();
-    driver.findElement(By.linkText("Gestione campi personalizzati")).click();
   }
 }
