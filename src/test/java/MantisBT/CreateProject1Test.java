@@ -37,7 +37,7 @@ public class CreateProject1Test {
     driver.quit();
   }
   @Test
-  public void createProject1() {
+  public void createProject1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.id("username")).sendKeys("administrator");

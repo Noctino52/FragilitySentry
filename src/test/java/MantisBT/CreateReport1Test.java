@@ -37,9 +37,9 @@ public class CreateReport1Test {
     driver.quit();
   }
   @Test
-  public void createReport1() {
+  public void createReport1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
-    driver.manage().window().setSize(new Dimension(945, 1020));
+    driver.manage().window().setSize(new Dimension(1936, 1056));
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
