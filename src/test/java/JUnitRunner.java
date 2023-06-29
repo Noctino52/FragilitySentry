@@ -8,12 +8,15 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
+//TODO:inserire i test di Dolibarr
 /*
+
 JUnitRunner prende tutti i casi di test registrati e li esegue con JUnitCore
  */
 public class JUnitRunner {
     public static void main(String[] args) throws IOException {
-        runAllTestsInDirectory("src/test/java/MantisBT");
+        //runAllTestsInDirectory("src/test/java/MantisBT");
+        runAllTestsInDirectory("src/test/java/Dolibarr");
     }
 
     public static void runAllTestsInDirectory(String directoryPath) throws IOException {
