@@ -37,12 +37,14 @@ public class CreateCompany1Test {
     driver.quit();
   }
   @Test
-  public void createCompany1() throws InterruptedException {
+  public void createCompany1() {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.id("password")).sendKeys("dolibarr");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.cssSelector(".menu")).click();
+    driver.findElement(By.linkText("Impostazioni")).click();
     driver.findElement(By.cssSelector(".fiche > .inline-block:nth-child(4)")).click();
     driver.findElement(By.linkText("Impostazioni -> Società/Organizzazione")).click();
     driver.findElement(By.id("name")).sendKeys("EasyCompany");

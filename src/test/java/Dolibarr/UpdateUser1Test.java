@@ -37,17 +37,22 @@ public class UpdateUser1Test {
     driver.quit();
   }
   @Test
-  public void updateUser1() {
+  public void updateUser1() throws InterruptedException {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.id("password")).sendKeys("dolibarr");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".menu")).click();
-    driver.findElement(By.cssSelector(".hidden-xs")).click();
+    driver.findElement(By.linkText("admin")).click();
     driver.findElement(By.linkText("Scheda")).click();
+
+    js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.xpath("//a[contains(text(),\'Modifica\')]")).click();
+
+    js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.name("email")).click();
+
     driver.findElement(By.name("email")).sendKeys("superadmin@gmail.com");
     driver.findElement(By.name("email")).sendKeys(Keys.ENTER);
   }

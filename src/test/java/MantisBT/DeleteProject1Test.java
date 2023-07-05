@@ -40,28 +40,27 @@ public class DeleteProject1Test {
   public void deleteProject1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
-
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
-    Thread.sleep(1000);
     driver.findElement(By.id("menu-toggler")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'sidebar-toggle') and not(@id='sidebar-btn')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.xpath("//div[contains(@class, 'sidebar-toggle') and not(@id='sidebar-btn')]")).click();
     Thread.sleep(1000);
     {
-      WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'sidebar-toggle') and not(@id='sidebar-btn')]"));
+      WebElement element = driver.findElement(By.cssSelector(".sidebar-toggle"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
     Thread.sleep(1000);
-    driver.findElement(By.xpath("//div[contains(@class, 'sidebar-toggle') and not(@id='sidebar-btn')]")).click();
+    driver.findElement(By.cssSelector(".sidebar-toggle")).click();
+    {
+      WebElement element = driver.findElement(By.cssSelector(".sidebar-toggle"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    Thread.sleep(1000);
+    driver.findElement(By.cssSelector(".sidebar-toggle")).click();
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestione progetti")).click();
     driver.findElement(By.linkText("EasyManager")).click();

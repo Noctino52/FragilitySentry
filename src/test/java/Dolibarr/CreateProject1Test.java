@@ -47,6 +47,7 @@ public class CreateProject1Test {
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Nuova opportunità o progetto")).click();
     driver.findElement(By.name("title")).sendKeys("ProgettoEasy");
+    js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.cssSelector(".button:nth-child(1)")).click();
   }
 }

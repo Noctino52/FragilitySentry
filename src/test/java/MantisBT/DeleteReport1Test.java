@@ -57,7 +57,7 @@ public class DeleteReport1Test {
     driver.findElement(By.name("fixed_in_version")).click();
     {
       WebElement dropdown = driver.findElement(By.name("fixed_in_version"));
-      dropdown.findElement(By.xpath("//option[. = '[EasyManager] 1.1']")).click();
+      dropdown.findElement(By.xpath("//option[. = '1.1']")).click();
     }
     driver.findElement(By.cssSelector(".widget-toolbox > .btn")).click();
     driver.findElement(By.cssSelector(".pull-left:nth-child(5) .btn")).click();
