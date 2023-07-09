@@ -1,0 +1,16 @@
+Nome del test,MantisBT18,MantisBT19,MantisBT20,MantisBT21,MantisBT22
+addTag1,passed,passed,passed,error,error
+stopFilter1,passed,passed,error,error,error
+createFilter1,passed,passed,error,error,error
+createNote1,passed,passed,passed,error,error
+createProject1,passed,passed,passed,passed,passed
+createReport1,passed,passed,passed,passed,passed
+createTag1,passed,passed,passed,passed,failed
+createUser1,passed,error,error,error,error
+readAdministratorInfo1,passed,error,error,error,error
+updateUserInfo1,passed,failed,failed,failed,failed
+updateWorkflow1,passed,passed,passed,passed,error
+deleteNote1,passed,passed,passed,passed,passed
+deleteUser1,passed,passed,passed,passed,passed
+deleteReport1,passed,passed,passed,passed,passed
+deleteProject1,passed,passed,error,error,error

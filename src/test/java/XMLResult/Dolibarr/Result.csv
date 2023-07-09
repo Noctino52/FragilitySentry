@@ -1,0 +1,16 @@
+Nome del test,Dolibarr13,Dolibarr14.0,Dolibarr14.2,Dolibarr14.5,Dolibarr15
+createCompany1,passed,error,error,error,error
+createProject1,passed,passed,passed,passed,passed
+createReport1,passed,passed,passed,passed,error
+createTicket1,passed,passed,error,error,error
+deleteBackup1,passed,passed,passed,passed,passed
+deleteHoliday1,passed,passed,passed,passed,error
+deleteProductLot1,passed,passed,passed,passed,error
+readAgenda1,passed,passed,passed,passed,passed
+readBAccounts1,passed,failed,failed,failed,failed
+readContribution1,passed,passed,passed,error,error
+readSubscription1,passed,passed,passed,error,error
+updateStyle1,passed,passed,passed,passed,passed
+updateTax1,passed,passed,error,error,error
+updateUser1,passed,passed,passed,passed,passed
+updateValidityFile1,passed,passed,passed,error,error
