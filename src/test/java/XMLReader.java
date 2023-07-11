@@ -25,7 +25,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-//TODO:inserire i test di Magento
+//TODO:inserire i test di JUnit.Magento
 /*
 
 JUnitRunner prende tutti i casi di test registrati e li esegue con JUnitCore
@@ -45,9 +45,9 @@ import java.util.List;
 
 public class XMLReader {
     public static void main(String[] args) {
-        //String directoryPath = "src/test/java/XMLResult/Dolibarr";
-        //String directoryPath = "src/test/java/XMLResult/MantisBT";
-        String directoryPath = "src/test/java/XMLResult/Magento";
+        //String directoryPath = "src/test/java/XMLResult/JUnit.Dolibarr";
+        //String directoryPath = "src/test/java/XMLResult/JUnit.MantisBT";
+        String directoryPath = "src/test/java/XMLResult/JUnit.Magento";
         String csvFilePath = directoryPath+"/Result.csv";
 
         File directory = new File(directoryPath);

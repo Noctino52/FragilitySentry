@@ -5,18 +5,18 @@
         <module name="FragilitySentry"/>
         <option name="TEST_OBJECT" value="pattern"/>
         <patterns>
-            <pattern testClass="Magento.CreateAccount1Test"/>
-            <pattern testClass="Magento.CreateCheckout1Test"/>
-            <pattern testClass="Magento.CreateHelp1Test"/>
-            <pattern testClass="Magento.CreateOrder1Test"/>
-            <pattern testClass="Magento.CreateReturn1Test"/>
+            <pattern testClass="JUnit.Magento.CreateAccount1Test"/>
+            <pattern testClass="JUnit.Magento.CreateCheckout1Test"/>
+            <pattern testClass="JUnit.Magento.CreateHelp1Test"/>
+            <pattern testClass="JUnit.Magento.CreateOrder1Test"/>
+            <pattern testClass="JUnit.Magento.CreateReturn1Test"/>
             <pattern testClass="DeleteCart1Test"/>
-            <pattern testClass="Magento.ReadDetailsProduct1Test"/>
-            <pattern testClass="Magento.ReadExtension1Test"/>
-            <pattern testClass="Magento.ReadPopular1Test"/>
-            <pattern testClass="Magento.ReadPrivacy1Test"/>
-            <pattern testClass="Magento.ReadProduct1Test"/>
-            <pattern testClass="Magento.ReadTemplate1Test"/>
+            <pattern testClass="JUnit.Magento.ReadDetailsProduct1Test"/>
+            <pattern testClass="JUnit.Magento.ReadExtension1Test"/>
+            <pattern testClass="JUnit.Magento.ReadPopular1Test"/>
+            <pattern testClass="JUnit.Magento.ReadPrivacy1Test"/>
+            <pattern testClass="JUnit.Magento.ReadProduct1Test"/>
+            <pattern testClass="JUnit.Magento.ReadTemplate1Test"/>
             <pattern testClass="ReadView1Test"/>
             <pattern testClass="ResetPassword1Test"/>
             <pattern testClass="UpdatePage1Test"/>
@@ -30,8 +30,8 @@
 Process finished with exit code 0
 </output>
     </root>
-    <suite duration="7619" locationUrl="java:suite://Magento.CreateAccount1Test" name="CreateAccount1Test" status="passed">
-        <test duration="7619" locationUrl="java:test://Magento.CreateAccount1Test/createAccount1" name="createAccount1" metainfo="" status="passed">
+    <suite duration="7619" locationUrl="java:suite://JUnit.Magento.CreateAccount1Test" name="CreateAccount1Test" status="passed">
+        <test duration="7619" locationUrl="java:test://JUnit.Magento.CreateAccount1Test/createAccount1" name="createAccount1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 40675
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -41,8 +41,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="11453" locationUrl="java:suite://Magento.CreateCheckout1Test" name="CreateCheckout1Test" status="passed">
-        <test duration="11453" locationUrl="java:test://Magento.CreateCheckout1Test/createCheckout1" name="createCheckout1" metainfo="" status="passed">
+    <suite duration="11453" locationUrl="java:suite://JUnit.Magento.CreateCheckout1Test" name="CreateCheckout1Test" status="passed">
+        <test duration="11453" locationUrl="java:test://JUnit.Magento.CreateCheckout1Test/createCheckout1" name="createCheckout1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 35847
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -52,8 +52,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="4672" locationUrl="java:suite://Magento.CreateHelp1Test" name="CreateHelp1Test" status="passed">
-        <test duration="4672" locationUrl="java:test://Magento.CreateHelp1Test/createHelp1" name="createHelp1" metainfo="" status="passed">
+    <suite duration="4672" locationUrl="java:suite://JUnit.Magento.CreateHelp1Test" name="CreateHelp1Test" status="passed">
+        <test duration="4672" locationUrl="java:test://JUnit.Magento.CreateHelp1Test/createHelp1" name="createHelp1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 9236
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -67,8 +67,8 @@ INFO: When using the W3C Action commands, offsets are from the center of element
 </output>
         </test>
     </suite>
-    <suite duration="8873" locationUrl="java:suite://Magento.CreateOrder1Test" name="CreateOrder1Test" status="passed">
-        <test duration="8873" locationUrl="java:test://Magento.CreateOrder1Test/createOrder1" name="createOrder1" metainfo="" status="passed">
+    <suite duration="8873" locationUrl="java:suite://JUnit.Magento.CreateOrder1Test" name="CreateOrder1Test" status="passed">
+        <test duration="8873" locationUrl="java:test://JUnit.Magento.CreateOrder1Test/createOrder1" name="createOrder1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 14992
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -78,8 +78,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="2761" locationUrl="java:suite://Magento.CreateReturn1Test" name="CreateReturn1Test" status="passed">
-        <test duration="2761" locationUrl="java:test://Magento.CreateReturn1Test/createReturn1" name="createReturn1" metainfo="" status="passed">
+    <suite duration="2761" locationUrl="java:suite://JUnit.Magento.CreateReturn1Test" name="CreateReturn1Test" status="passed">
+        <test duration="2761" locationUrl="java:test://JUnit.Magento.CreateReturn1Test/createReturn1" name="createReturn1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 47030
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -100,8 +100,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="7530" locationUrl="java:suite://Magento.ReadDetailsProduct1Test" name="ReadDetailsProduct1Test" status="passed">
-        <test duration="7530" locationUrl="java:test://Magento.ReadDetailsProduct1Test/readDetailsProduct1" name="readDetailsProduct1" metainfo="" status="passed">
+    <suite duration="7530" locationUrl="java:suite://JUnit.Magento.ReadDetailsProduct1Test" name="ReadDetailsProduct1Test" status="passed">
+        <test duration="7530" locationUrl="java:test://JUnit.Magento.ReadDetailsProduct1Test/readDetailsProduct1" name="readDetailsProduct1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 39228
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -111,8 +111,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="9168" locationUrl="java:suite://Magento.ReadExtension1Test" name="ReadExtension1Test" status="passed">
-        <test duration="9168" locationUrl="java:test://Magento.ReadExtension1Test/readExtension1" name="readExtension1" metainfo="" status="passed">
+    <suite duration="9168" locationUrl="java:suite://JUnit.Magento.ReadExtension1Test" name="ReadExtension1Test" status="passed">
+        <test duration="9168" locationUrl="java:test://JUnit.Magento.ReadExtension1Test/readExtension1" name="readExtension1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 45112
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -122,8 +122,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="4155" locationUrl="java:suite://Magento.ReadPopular1Test" name="ReadPopular1Test" status="passed">
-        <test duration="4155" locationUrl="java:test://Magento.ReadPopular1Test/readPopular1" name="readPopular1" metainfo="" status="passed">
+    <suite duration="4155" locationUrl="java:suite://JUnit.Magento.ReadPopular1Test" name="ReadPopular1Test" status="passed">
+        <test duration="4155" locationUrl="java:test://JUnit.Magento.ReadPopular1Test/readPopular1" name="readPopular1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 1970
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -133,8 +133,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="9060" locationUrl="java:suite://Magento.ReadPrivacy1Test" name="ReadPrivacy1Test" status="passed">
-        <test duration="9060" locationUrl="java:test://Magento.ReadPrivacy1Test/readPrivacy1" name="readPrivacy1" metainfo="" status="passed">
+    <suite duration="9060" locationUrl="java:suite://JUnit.Magento.ReadPrivacy1Test" name="ReadPrivacy1Test" status="passed">
+        <test duration="9060" locationUrl="java:test://JUnit.Magento.ReadPrivacy1Test/readPrivacy1" name="readPrivacy1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 32392
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -144,8 +144,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="5746" locationUrl="java:suite://Magento.ReadProduct1Test" name="ReadProduct1Test" status="passed">
-        <test duration="5746" locationUrl="java:test://Magento.ReadProduct1Test/readProduct1" name="readProduct1" metainfo="" status="passed">
+    <suite duration="5746" locationUrl="java:suite://JUnit.Magento.ReadProduct1Test" name="ReadProduct1Test" status="passed">
+        <test duration="5746" locationUrl="java:test://JUnit.Magento.ReadProduct1Test/readProduct1" name="readProduct1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 39788
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
@@ -155,8 +155,8 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="7449" locationUrl="java:suite://Magento.ReadTemplate1Test" name="ReadTemplate1Test" status="passed">
-        <test duration="7449" locationUrl="java:test://Magento.ReadTemplate1Test/readTemplate1" name="readTemplate1" metainfo="" status="passed">
+    <suite duration="7449" locationUrl="java:suite://JUnit.Magento.ReadTemplate1Test" name="ReadTemplate1Test" status="passed">
+        <test duration="7449" locationUrl="java:test://JUnit.Magento.ReadTemplate1Test/readTemplate1" name="readTemplate1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 1292
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
