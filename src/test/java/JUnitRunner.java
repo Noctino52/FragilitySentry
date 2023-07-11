@@ -1,83 +1,40 @@
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
-
-//TODO:inserire i test di Dolibarr
-/*
-
-JUnitRunner prende tutti i casi di test registrati e li esegue con JUnitCore
- */
 public class JUnitRunner {
-    public static void main(String[] args) throws IOException {
-        //runAllTestsInDirectory("src/test/java/MantisBT");
-        runAllTestsInDirectory("src/test/java/Dolibarr");
-    }
 
-    public static void runAllTestsInDirectory(String directoryPath) throws IOException {
-        List<Class<?>> testClasses = findTestClasses(directoryPath);
-        runTestClasses(testClasses);
-    }
-
-    private static List<Class<?>> findTestClasses(String directoryPath) throws IOException {
-        List<Class<?>> testClasses = new ArrayList<>();
-
-        try {
-            // Cammina attraverso il percorso della directory dei test
-            Files.walk(Paths.get(directoryPath))
-                    .filter(Files::isRegularFile)
-                    .forEach(filePath -> {
-                        String fileName = filePath.getFileName().toString();
-                        if (fileName.endsWith("Test.java")) {
-                            System.out.println(filePath.toString());
-                            // Costruisci il nome della classe
-                            String className = filePath.toString()
-                                    .replace("src\\test\\java\\", "")  // Rimuovi la parte iniziale del percorso
-                                    .replace(File.separator, ".")  // Converti il separatore di file in "."
-                                    .replace(".java", "");  // Rimuovi l'estensione del file
-                            try {
-                                System.out.println(className);
-                                // Carica la classe utilizzando il nome qualificato
-                                Class<?> testClass = Class.forName(className);
-                                testClasses.add(testClass);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static List<Test> createTestScore(List<Test> testWithSelector){
+        float score=0;
+        for (Test testToJudge: testWithSelector) {
+            score=Judge.getTestScore(testToJudge);
+            testToJudge.setTestScore(score);
         }
-
-        return testClasses;
+        return testWithSelector;
     }
 
-    private static void runTestClasses(List<Class<?>> testClasses) {
-        ChromeOptions options = new ChromeOptions();
-        // Imposta eventuali opzioni desiderate per il driver di Chrome
-
-        // Imposta il percorso del driver di Chrome (chromedriver) sul tuo sistema
-        System.setProperty("webdriver.chrome.driver", "C:\\Webdrivers\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver(options);
-
-        try {
-            for (Class<?> testClass : testClasses) {
-                JUnitCore junit = new JUnitCore();
-                // Esegui la classe dei test
-                Result result = junit.run(testClass);
-                for (Failure failure : result.getFailures()) {
-                    System.out.println(failure.toString());
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            driver.quit();
+    private static void showResult(List<Test> testsJudged, TestRunner testRunner) {
+        System.out.println("==================================");
+        System.out.println("============Risultati=============");
+        System.out.println("=Successi: "+testRunner.numberOfSuccessTests+" ==Fallimenti: "+testRunner.numberOfFailedTests+"=");
+        System.out.println("==================================");
+        for (Test testJudged:testsJudged) {
+            System.out.println("Nome Test:"+testJudged.getClassName()+
+                    " Punteggio:"+testJudged.getTestScore());
         }
+    }
+
+
+    public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException, IOException {
+        String directoryMagento="src/test/java/JUnit/Magento";
+
+        List<Test> magentoTests=Test.getAllTests(directoryMagento);
+        TestRunner testRunner=new TestRunner(magentoTests);
+        List<Test> testsWithSelector=testRunner.executeTests();
+
+        //Dal punteggio dei selettori ottengo il punteggio dei test
+        List<Test> testsJudged=createTestScore(testsWithSelector);
+
+        showResult(testsJudged,testRunner);
     }
 }
