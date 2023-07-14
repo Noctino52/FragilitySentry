@@ -14,9 +14,8 @@ public class JUnitRunner {
     }
 
     private static void showResult(List<Test> testsJudged, TestRunner testRunner) {
-        System.out.println("==================================");
         System.out.println("============Risultati=============");
-        System.out.println("=Successi: "+testRunner.numberOfSuccessTests+" ==Fallimenti: "+testRunner.numberOfFailedTests+"=");
+        System.out.println("==Successi: "+testRunner.numberOfSuccessTests+" ==Fallimenti: "+testRunner.numberOfFailedTests+" ==");
         System.out.println("==================================");
         for (Test testJudged:testsJudged) {
             System.out.println("Nome Test:"+testJudged.getClassName()+

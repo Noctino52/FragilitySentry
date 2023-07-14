@@ -1,3 +1,5 @@
+import org.jsoup.nodes.Document;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,6 +9,7 @@ public class Test {
 
     private final String className;
     private List<Selector> selectors;
+    private List<Document> documents;
     private float testScore;
 
     public Test(String className) {
@@ -59,5 +62,11 @@ public class Test {
     }
     public void setSelectors(List<Selector> selectors) {
         this.selectors = selectors;
+    Upd
+    public List<Document> getDocuments() {
+        return documents;
+    }
+    public void setDocuments(List<Document> documents) {
+        this.documents = documents;
     }
 }

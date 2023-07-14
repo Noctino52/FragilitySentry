@@ -1,6 +1,10 @@
+import org.jsoup.nodes.Document;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.WebDriverListener;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,16 +15,15 @@ import java.util.concurrent.TimeUnit;
 public class TestRunner {
 
     List<Test> testsToValidate;
+    WebDriverListener listenerDriver;
     SelectorWebDriver listener;
     WebDriver driver;
-    EventFiringWebDriver driverEvent;
     int numberOfSuccessTests=0;
     int numberOfFailedTests=0;
 
     public TestRunner(List<Test> tests) {
 
         this.testsToValidate = tests;
-        this.listener=new SelectorWebDriver();
     }
 
     public List<Test> executeTests() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException {
@@ -36,6 +39,7 @@ public class TestRunner {
 
     private Test executeTest(int testNum) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         List<Selector> selectorFinished;
+        List<Document> documentFinished;
         Test test;
         String nomeTest;
         String nomeMetodo;
@@ -57,14 +61,15 @@ public class TestRunner {
 
         // Esecuzione test case
         testX = Class.forName(nomeTest);
-        objPetX = testX.getDeclaredConstructor(arg).newInstance(driverEvent);
+        objPetX = create(testX);
 
-        method1 = testX.getDeclaredMethod("setUp");
-        method1.invoke(objPetX);
+        method1 = testX.getDeclaredMethod("setUp",WebDriver.class);
+        method1.invoke(objPetX,driver);
         method2 = testX.getDeclaredMethod(nomeMetodo);
         try {
             method2.invoke(objPetX);
         }catch(Exception e){
+            e.printStackTrace();
             Selector lastSelector=listener.getSelectorPages().get(listener.getSelectorPages().size() - 1);
             lastSelector.setSelectorScore(Judge.getBadElementScore(lastSelector));
             System.out.println("Un test ha smesso di funzionare,Richiamo il giudice cattivo che gli toglierà 100 punti!");
@@ -79,13 +84,24 @@ public class TestRunner {
         System.out.println("\n Test N."+testNum+" Concluso \n");
         selectorFinished = listener.getSelectorPages();
         test.setSelectors(selectorFinished);
+        documentFinished=listener.getDocumentPages();
+        test.setDocuments(documentFinished);
         return test;
     }
 
     private void setupListner() {
-        driver = new ChromeDriver();
-        driverEvent = new EventFiringWebDriver(driver);
-        driverEvent.register(listener);
+        ChromeDriverService service = new ChromeDriverService.Builder()
+                .withLogOutput(System.err)
+                .build();
+
+        driver = new ChromeDriver(service);
+        listener=new SelectorWebDriver();
+        listenerDriver=listener;
+        driver= new EventFiringDecorator(listenerDriver).decorate(driver);
+
+        //WebDriver original = new ChromeDriver();
+        //WebDriverListener listener = new SelectorWebDriver();
+        //WebDriver decorated = new EventFiringDecorator(listener).decorate(original);
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
@@ -110,7 +126,15 @@ public class TestRunner {
         return nomeMetodo;
     }
 
-    public static String decapitalize(String string) {
+    public static <T> T create(Class<T> someClass) {
+        try {
+            return someClass.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
+            throw new RuntimeException("Failed to create instance of class " + someClass.getName(), ex);
+        }
+    }
+
+    private static String decapitalize(String string) {
         if (string == null || string.length() == 0) {
             return string;
         }
