@@ -23,16 +23,14 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 public class ResetPassword1Test {
-  private WebDriver driver;
+  private WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
 
-  public ResetPassword1Test(WebDriver driver) {
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
     this.driver = driver;
-  }
-
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }

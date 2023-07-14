@@ -16,16 +16,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class CreateCheckout1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
+  private WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
 
-  public CreateCheckout1Test(WebDriver driver) {
-    this.driver = driver;
-  }
 
-  @Before
-  public void setUp() {
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -59,7 +57,6 @@ public class CreateCheckout1Test {
     driver.findElement(By.cssSelector(".tocart > span")).click();
     Thread.sleep(1000);
     driver.findElement(By.linkText("shopping cart")).click();
-    Thread.sleep(1000);
     driver.findElement(By.cssSelector(".checkout > span")).click();
   }
 }

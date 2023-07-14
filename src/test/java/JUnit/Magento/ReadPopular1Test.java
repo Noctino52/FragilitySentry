@@ -14,16 +14,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class ReadPopular1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
+  private WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
 
-  public ReadPopular1Test(WebDriver driver) {
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
     this.driver = driver;
-  }
-
-  @Before
-  public void setUp() {
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }

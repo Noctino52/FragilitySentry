@@ -16,16 +16,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class CreateHelp1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
+  private WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
 
-  public CreateHelp1Test(WebDriver driver) {
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
     this.driver = driver;
-  }
-
-  @Before
-  public void setUp() {
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -52,8 +51,8 @@ public class CreateHelp1Test {
     driver.findElement(By.id("name")).sendKeys("Mario");
     driver.findElement(By.id("email")).sendKeys("prova@prova.com");
     driver.findElement(By.id("comment")).click();
-    driver.findElement(By.id("comment")).sendKeys("Ho un problema");
     Thread.sleep(1000);
+    driver.findElement(By.id("comment")).sendKeys("Ho un problema");
     driver.findElement(By.cssSelector(".submit > span")).click();
     {
       WebElement element = driver.findElement(By.cssSelector(".submit > span"));
