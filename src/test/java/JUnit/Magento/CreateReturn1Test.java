@@ -38,10 +38,10 @@ public class CreateReturn1Test {
     driver.findElement(By.cssSelector(".nav:nth-child(3) > a")).click();
     driver.findElement(By.id("oar-order-id")).click();
     driver.findElement(By.id("oar-order-id")).sendKeys("1");
-    driver.findElement(By.id("oar-billing-lastname")).click();
-    driver.findElement(By.id("oar-billing-lastname")).sendKeys("Capasso");
-    driver.findElement(By.id("oar_email")).click();
-    driver.findElement(By.id("oar_email")).sendKeys("prova@prova.com");
+    driver.findElement(By.name("oar_billing_lastname")).click();
+    driver.findElement(By.name("oar_billing_lastname")).sendKeys("Capasso");
+    driver.findElement(By.xpath("//input[@id=\'oar_email\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'oar_email\']")).sendKeys("prova@prova.com");
     driver.findElement(By.cssSelector(".submit > span")).click();
     {
       WebElement element = driver.findElement(By.cssSelector(".submit > span"));

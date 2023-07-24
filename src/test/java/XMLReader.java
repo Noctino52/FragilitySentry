@@ -25,7 +25,6 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-//TODO:inserire i test di JUnit.Magento
 /*
 
 JUnitRunner prende tutti i casi di test registrati e li esegue con JUnitCore

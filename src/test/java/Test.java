@@ -62,7 +62,7 @@ public class Test {
     }
     public void setSelectors(List<Selector> selectors) {
         this.selectors = selectors;
-    Upd
+    }
     public List<Document> getDocuments() {
         return documents;
     }

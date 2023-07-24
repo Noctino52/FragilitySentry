@@ -29,11 +29,11 @@ public class ReadDetailsProduct1Test {
   }
   @Test
   public void readDetailsProduct1() throws InterruptedException {
-    driver.get("http://localhost/admin/admin/index/index/key/74014886a852539c94baad79d84f61c57416f74d1b3a4858e3d7b6f5bf236f5e/");
+    driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("user");
-    driver.findElement(By.id("login")).sendKeys("bitnami1");
-    driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
+    driver.findElement(By.xpath("//input[@id=\'username\']")).sendKeys("user");
+    driver.findElement(By.xpath("//input[@id=\'login\']")).sendKeys("bitnami1");
+    driver.findElement(By.xpath("//input[@id=\'login\']")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector("#menu-magento-catalog-catalog > a")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".item-catalog-products span")).click();

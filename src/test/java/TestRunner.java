@@ -3,7 +3,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.support.events.EventFiringDecorator;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverListener;
 
 import java.lang.reflect.InvocationTargetException;
@@ -99,13 +98,11 @@ public class TestRunner {
         listenerDriver=listener;
         driver= new EventFiringDecorator(listenerDriver).decorate(driver);
 
-        //WebDriver original = new ChromeDriver();
-        //WebDriverListener listener = new SelectorWebDriver();
-        //WebDriver decorated = new EventFiringDecorator(listener).decorate(original);
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
         listener.setSelectorPages(new ArrayList<>());
+        listener.setDocumentPages(new ArrayList<>());
     }
 
 

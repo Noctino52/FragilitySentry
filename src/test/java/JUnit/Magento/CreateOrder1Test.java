@@ -45,8 +45,9 @@ public class CreateOrder1Test {
     driver.findElement(By.cssSelector(".even > .col-phone")).click();
     Thread.sleep(1000);
     js.executeScript("window.scrollBy(0,600)", "");
+    Thread.sleep(2000);
     driver.findElement(By.xpath("//label[contains(.,\'Save in address book\')]")).click();
-    Thread.sleep(1000);
+    Thread.sleep(2000);
     js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.xpath("//div[3]/button/span")).click();
   }
