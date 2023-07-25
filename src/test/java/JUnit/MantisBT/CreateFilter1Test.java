@@ -16,12 +16,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class CreateFilter1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -91,5 +93,31 @@ public class CreateFilter1Test {
     driver.findElement(By.name("query_name")).click();
     driver.findElement(By.name("query_name")).sendKeys("Filtro di prova");
     driver.findElement(By.cssSelector(".btn:nth-child(9)")).click();
+
+
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div/h4")).click();
+    driver.findElement(By.cssSelector("#breadcrumbs")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div[3]")).click();
+    driver.findElement(By.name("search")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div/h4")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div/h4/span")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div[3]")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[2]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[10]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[9]")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div[2]/div")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[7]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[6]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[5]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[4]")).click();
+    {
+      WebElement element = driver.findElement(By.linkText("Esporta in Excel"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }

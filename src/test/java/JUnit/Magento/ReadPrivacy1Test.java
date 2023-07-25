@@ -50,6 +50,12 @@ public class ReadPrivacy1Test {
     driver.findElement(By.id("login")).sendKeys("bitnami1");
     driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
     Thread.sleep(2000);
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div/div/h1")).click();
+    driver.findElement(By.xpath("//main[@id=\'anchor-content\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/header")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div[2]/div")).click();
     driver.findElement(By.cssSelector("#menu-magento-marketplace-partners > a")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".page-footer")).click();

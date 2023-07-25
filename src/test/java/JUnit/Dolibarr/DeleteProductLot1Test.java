@@ -5,21 +5,21 @@ import org.junit.After;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+
 import java.util.*;
 
 public class DeleteProductLot1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -39,5 +39,37 @@ public class DeleteProductLot1Test {
     driver.findElement(By.linkText("Impostazioni -> Moduli/Applicazioni")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();
+
+
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table[2]/tbody/tr/td/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table[2]/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
+    driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
+    driver.findElement(By.xpath("//span[@id=\'select2-search_nature-container\']")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[3]")).click();
+    driver.findElement(By.xpath("//input[@id=\'search_keyword\']")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[3]/div/input")).click();
+    {
+      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Moduli disponibili\')]"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Trova app/moduli esterni...\')]"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.xpath("(//a[contains(text(),\'Trova app/moduli esterni...\')])[2]"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Sviluppa il tuo modulo/app\')]"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
   }
 }

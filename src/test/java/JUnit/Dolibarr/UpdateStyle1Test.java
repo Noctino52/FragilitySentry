@@ -15,12 +15,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class UpdateStyle1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -52,5 +53,17 @@ public class UpdateStyle1Test {
       dropdown.findElement(By.xpath("//option[. = 'eldy_menu']")).click();
     }
     driver.findElement(By.name("save")).click();
+
+
+
+
+    driver.findElement(By.id("MAIN_MENU_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENU_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENU_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENU_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_SMARTPHONE")).click();
   }
 }

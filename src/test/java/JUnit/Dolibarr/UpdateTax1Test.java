@@ -14,12 +14,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class UpdateTax1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -40,5 +41,16 @@ public class UpdateTax1Test {
     driver.findElement(By.id("no_vat")).click();
     driver.findElement(By.xpath("//table[7]/tbody/tr/td[@width]")).click();
     driver.findElement(By.name("save")).click();
+
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[2]/td[2]/input")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
+    driver.findElement(By.xpath("//input[@id=\'MAIN_INFO_SOCIETE_ZIP\']")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
+    driver.findElement(By.xpath("//span[@id=\'select2-state_id-container\']")).click();
+    driver.findElement(By.name("tel")).click();
+    driver.findElement(By.xpath("//input[@id=\'fax\']")).click();
+    driver.findElement(By.name("mail")).click();
+    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
+    driver.findElement(By.name("barcode")).click();
   }
 }

@@ -10,11 +10,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class CreateCompany1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -36,5 +38,22 @@ public class CreateCompany1Test {
     driver.findElement(By.id("select2-selectcountry_id-container")).click();
     driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Ital");
     driver.findElement(By.name("save")).click();
+
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
+    driver.findElement(By.cssSelector("#MAIN_INFO_SOCIETE_ZIP")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[9]/td[2]/input")).click();
+    driver.findElement(By.cssSelector("#fax")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[11]/td[2]/input")).click();
+    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'barcode\']")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
+    driver.findElement(By.cssSelector("#MAIN_INFO_SOCIETE_ZIP")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[9]/td[2]/input")).click();
+    driver.findElement(By.cssSelector("#fax")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[11]/td[2]/input")).click();
+    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'barcode\']")).click();
   }
 }

@@ -14,12 +14,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class AddTag1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -41,5 +43,16 @@ public class AddTag1Test {
     driver.findElement(By.id("tag_string")).sendKeys("mysql");
     driver.findElement(By.cssSelector(".btn:nth-child(7)")).click();
     driver.findElement(By.cssSelector(".bug-tags > .btn:nth-child(2)")).click();
+
+
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/th[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[3]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'monitoring\']/div/h4")).click();
   }
 }

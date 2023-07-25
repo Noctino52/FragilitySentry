@@ -49,6 +49,14 @@ public class ReadExtension1Test {
     driver.findElement(By.id("username")).sendKeys("user");
     driver.findElement(By.id("login")).sendKeys("bitnami1");
     driver.findElement(By.cssSelector(".action-login > span")).click();
+    driver.findElement(By.cssSelector(".search-global-label")).click();
+    driver.findElement(By.linkText("1")).click();
+    driver.findElement(By.linkText("1")).click();
+    driver.findElement(By.xpath("//main/div/div/span")).click();
+    driver.findElement(By.xpath("//section/div/header")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector("#menu-magento-marketplace-partners > a")).click();
     js.executeScript("window.scrollBy(0,200)", "");

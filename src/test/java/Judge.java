@@ -17,13 +17,16 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import java.io.StringReader;
+import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 public class Judge {
 
-    static float testScore=0;
+    static double testScore=0;
     static float sumOfSelectorScore=0;
+    static float numOfTestValutated=0;
 
     public static float getElementScore(Selector selector, Document document) {
 
@@ -125,18 +128,19 @@ public class Judge {
         return lastSelector.getSelectorScore()-100;
     }
 
-    public static float getTestScore(Test test) {
+    public static double getTestScore(Test test) {
 
 
-            float prodotto = 1;
+            double prodotto = 1;
             int n = test.getSelectors().size();
 
             for (Selector tes : test.getSelectors()) {
-                float numtes=tes.getSelectorScore();
+                double numtes=tes.getSelectorScore();
                 prodotto *= numtes;
             }
-
-            return (float) Math.pow(prodotto, 1.0 / n);
+            numOfTestValutated+=1;
+            //System.out.println("Punteggio Test Num "+numOfTestValutated+" Calcolo: "+prodotto+"^(1/"+n+") \n" );
+            return Math.pow(prodotto, 1.0 / n);
         }
 
     /*
@@ -177,7 +181,7 @@ public class Judge {
         return testWaste;
     }
 
-    private static float arithmeticAverage(Test test) {
+    private static double arithmeticAverage(Test test) {
         testScore=0;
         sumOfSelectorScore=0;
         int numberOfSelector=test.getSelectors().size();
@@ -187,6 +191,10 @@ public class Judge {
             sumOfSelectorScore+=selector.getSelectorScore();
         }
         testScore=sumOfSelectorScore/numberOfSelector;
+        DecimalFormat df = new DecimalFormat("#.##");
+        df.setRoundingMode(RoundingMode.FLOOR);
+        String textScore= df.format(testScore);
+        testScore = Double.parseDouble(textScore);
         return testScore;
     }
 }

@@ -14,12 +14,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class UpdateValidityFile1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -37,10 +38,20 @@ public class UpdateValidityFile1Test {
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Strumenti di amministrazione")).click();
     driver.findElement(By.cssSelector(".menu")).click();
-    driver.findElement(By.linkText("Informazioni su JUnit.Dolibarr")).click();
+    driver.findElement(By.linkText("Informazioni su Dolibarr")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Verifica integrità dei file")).click();
     driver.findElement(By.cssSelector("input:nth-child(7)")).click();
     driver.findElement(By.cssSelector(".button")).click();
+
+
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/span[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td[2]/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/form/span")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/table/tbody/tr/td[4]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[3]/tbody/tr/td[2]/div")).click();
   }
 }

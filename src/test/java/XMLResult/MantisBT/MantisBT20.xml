@@ -10,7 +10,7 @@
         <option name="TEST_OBJECT" value="pattern"/>
         <patterns>
             <pattern testClass="JUnit.MantisBT.AddTag1Test"/>
-            <pattern testClass="JUnit.MantisBT.StopFilter1Test"/>
+            <pattern testClass="JUnit.MantisBT.aStopFilter1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateFilter1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateNote1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateProject1Test"/>
@@ -20,10 +20,10 @@
             <pattern testClass="JUnit.MantisBT.ReadAdminInfo1Test"/>
             <pattern testClass="JUnit.MantisBT.UpdateUserInfo1Test"/>
             <pattern testClass="JUnit.MantisBT.UpdateWorkflow1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteNote1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteUser1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteReport1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteProject1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteNote1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteUser1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteReport1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteProject1Test"/>
         </patterns>
         <method v="2">
             <option name="Make" enabled="true"/>
@@ -45,7 +45,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="8527" locationUrl="java:suite://JUnit.MantisBT.StopFilter1Test" name="StopFilter1Test" status="error">
+    <suite duration="8527" locationUrl="java:suite://JUnit.MantisBT.aStopFilter1Test" name="StopFilter1Test" status="error">
         <test duration="8527" locationUrl="java:test://JUnit.MantisBT.StopFilter1Test/stopFilter1" name="stopFilter1" metainfo="" status="error">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90
                 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 6029
@@ -90,7 +90,7 @@ INFO: Detected dialect: W3C
                 at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)&#13;
                 at org.openqa.selenium.By$ByName.findElement(By.java:284)&#13;
                 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#13;
-                at JUnit.MantisBT.StopFilter1Test.stopFilter1(StopFilter1Test.java:61)&#13;
+                at JUnit.MantisBT.aStopFilter1Test.stopFilter1(StopFilter1Test.java:61)&#13;
                 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
                 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
                 at
@@ -587,7 +587,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="5962" locationUrl="java:suite://JUnit.MantisBT.DeleteNote1Test" name="DeleteNote1Test" status="passed">
+    <suite duration="5962" locationUrl="java:suite://JUnit.MantisBT.zDeleteNote1Test" name="DeleteNote1Test" status="passed">
         <test duration="5962" locationUrl="java:test://JUnit.MantisBT.DeleteNote1Test/deleteNote1" name="deleteNote1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 40478
 Only local connections are allowed.
@@ -598,7 +598,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="6381" locationUrl="java:suite://JUnit.MantisBT.DeleteUser1Test" name="DeleteUser1Test" status="passed">
+    <suite duration="6381" locationUrl="java:suite://JUnit.MantisBT.zDeleteUser1Test" name="DeleteUser1Test" status="passed">
         <test duration="6381" locationUrl="java:test://JUnit.MantisBT.DeleteUser1Test/deleteUser1" name="deleteUser1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 41877
 Only local connections are allowed.
@@ -609,7 +609,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="4057" locationUrl="java:suite://JUnit.MantisBT.DeleteReport1Test" name="DeleteReport1Test" status="passed">
+    <suite duration="4057" locationUrl="java:suite://JUnit.MantisBT.zDeleteReport1Test" name="DeleteReport1Test" status="passed">
         <test duration="4057" locationUrl="java:test://JUnit.MantisBT.DeleteReport1Test/deleteReport1" name="deleteReport1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 27166
 Only local connections are allowed.
@@ -620,7 +620,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="6399" locationUrl="java:suite://JUnit.MantisBT.DeleteProject1Test" name="DeleteProject1Test" status="error">
+    <suite duration="6399" locationUrl="java:suite://JUnit.MantisBT.zDeleteProject1Test" name="DeleteProject1Test" status="error">
         <test duration="6399" locationUrl="java:test://JUnit.MantisBT.DeleteProject1Test/deleteProject1" name="deleteProject1" metainfo="" status="error">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90
                 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 2750
@@ -665,7 +665,7 @@ INFO: Detected dialect: W3C
                 at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)&#13;
                 at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)&#13;
                 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#13;
-                at JUnit.MantisBT.DeleteProject1Test.deleteProject1(DeleteProject1Test.java:67)&#13;
+                at JUnit.MantisBT.zDeleteProject1Test.deleteProject1(DeleteProject1Test.java:67)&#13;
                 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
                 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)&#13;
                 at

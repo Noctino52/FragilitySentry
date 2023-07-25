@@ -14,12 +14,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class CreateTicket1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -42,5 +43,14 @@ public class CreateTicket1Test {
     driver.findElement(By.name("add")).click();
     driver.findElement(By.cssSelector(".center:nth-child(3) > .butAction")).click();
     driver.findElement(By.cssSelector(".ui-button:nth-child(1)")).click();
+
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[7]/td/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//tr[4]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[3]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[2]/td/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//div/div[3]/div/div")).click();
+    driver.findElement(By.xpath("//div[2]/div/div[2]/div/div/div[4]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div/div/div[2]/span")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div[2]/div")).click();
   }
 }

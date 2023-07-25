@@ -5,11 +5,10 @@ import org.junit.After;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
@@ -37,5 +36,21 @@ public class ReadPopular1Test {
     driver.findElement(By.cssSelector(".nav:nth-child(1) > a")).click();
     Thread.sleep(1000);
     assertThat(driver.findElement(By.cssSelector(".base")).getText(), is("Popular Search Terms"));
+    driver.findElement(By.xpath("//input[@id=\'newsletter\']")).click();
+    driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div[2]/button/span")).click();
+    {
+      WebElement element = driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div[2]/button/span"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.tagName("body"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element, 0, 0).perform();
+    }
+    driver.findElement(By.xpath("//input[@id=\'search\']")).click();
+    driver.findElement(By.xpath("//ul[@id=\'ui-id-1\']")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div/h1/span")).click();
   }
 }

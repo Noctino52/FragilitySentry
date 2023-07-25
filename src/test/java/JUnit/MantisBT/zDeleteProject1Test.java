@@ -15,13 +15,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import java.util.*;
 
-public class DeleteProject1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+public class zDeleteProject1Test {
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -30,12 +32,24 @@ public class DeleteProject1Test {
     driver.quit();
   }
   @Test
-  public void deleteProject1() throws InterruptedException {
+  public void zDeleteProject1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.id("menu-toggler")).click();
@@ -54,10 +68,37 @@ public class DeleteProject1Test {
     }
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".sidebar-toggle")).click();
+    Thread.sleep(1000);
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestione progetti")).click();
     driver.findElement(By.linkText("EasyManager")).click();
     driver.findElement(By.cssSelector(".btn:nth-child(3)")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
+
+
+    {
+      WebElement element = driver.findElement(By.id("menu-toggler"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).release().perform();
+    }
+    driver.findElement(By.id("menu-toggler")).click();
+    {
+      WebElement element = driver.findElement(By.id("menu-toggler"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).release().perform();
+    }
+    driver.findElement(By.id("menu-toggler")).click();
+    {
+      WebElement element = driver.findElement(By.id("menu-toggler"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).release().perform();
+    }
+    driver.findElement(By.id("menu-toggler")).click();
+    {
+      WebElement element = driver.findElement(By.id("menu-toggler"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).release().perform();
+    }
+    driver.findElement(By.id("menu-toggler")).click();
   }
 }

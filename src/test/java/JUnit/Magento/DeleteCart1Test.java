@@ -52,5 +52,16 @@ public class DeleteCart1Test {
     driver.findElement(By.linkText("shopping cart")).click();
     Thread.sleep(2000);
     driver.findElement(By.linkText("Remove item")).click();
+    driver.findElement(By.id("newsletter")).click();
+    driver.findElement(By.id("search")).click();
+    driver.findElement(By.id("search")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
+    driver.findElement(By.id("newsletter")).click();
+    driver.findElement(By.id("maincontent")).click();
+    driver.findElement(By.id("ui-id-1")).click();
+    driver.findElement(By.id("ui-id-1")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
   }
 }

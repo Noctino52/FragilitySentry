@@ -15,12 +15,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class CreateProject1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -56,5 +58,36 @@ public class CreateProject1Test {
     driver.findElement(By.name("version")).click();
     driver.findElement(By.name("version")).sendKeys("1.0");
     driver.findElement(By.name("add_version")).click();
+
+
+
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+
+
+
   }
 }

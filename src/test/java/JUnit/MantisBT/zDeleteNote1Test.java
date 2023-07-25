@@ -15,13 +15,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import java.util.*;
 
-public class DeleteNote1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+public class zDeleteNote1Test {
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -30,7 +32,7 @@ public class DeleteNote1Test {
     driver.quit();
   }
   @Test
-  public void deleteNote1() throws InterruptedException {
+  public void zDeleteNote1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
     {
@@ -39,8 +41,20 @@ public class DeleteNote1Test {
       builder.moveToElement(element).perform();
     }
     driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("Chris95");
     driver.findElement(By.cssSelector(".width-40")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
+    driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     Thread.sleep(1000);

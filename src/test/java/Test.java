@@ -10,7 +10,7 @@ public class Test {
     private final String className;
     private List<Selector> selectors;
     private List<Document> documents;
-    private float testScore;
+    private double testScore;
 
     public Test(String className) {
         this.className=className;
@@ -50,11 +50,11 @@ public class Test {
     public String getClassName() {
         return className;
     }
-    public float getTestScore() {
+    public double getTestScore() {
         return testScore;
     }
 
-    public void setTestScore(float testScore) {
+    public void setTestScore(double testScore) {
         this.testScore = testScore;
     }
     public List<Selector> getSelectors() {

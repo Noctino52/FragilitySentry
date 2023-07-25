@@ -5,21 +5,22 @@ import org.junit.After;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
 public class UpdateUserInfo1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -41,5 +42,74 @@ public class UpdateUserInfo1Test {
     driver.findElement(By.linkText("Ivan52")).click();
     driver.findElement(By.cssSelector("tr:nth-child(3) > td")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td")).getText(), is("Ivan Capasso"));
+
+
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
+    driver.findElement(By.xpath("//div[@id=\'timeline\']/div/h4")).click();
+    driver.findElement(By.xpath("//div[2]/div[2]/div/div[2]/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//h6")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    {
+      WebElement element = driver.findElement(By.linkText("EasyManager"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    {
+      WebElement element = driver.findElement(By.linkText("EasyManager"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    {
+      WebElement element = driver.findElement(By.linkText("EasyManager"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    driver.findElement(By.linkText("EasyManager")).click();
+    {
+      WebElement element = driver.findElement(By.linkText("EasyManager"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
   }
 }

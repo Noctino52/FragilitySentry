@@ -8,7 +8,7 @@
         <option name="TEST_OBJECT" value="pattern"/>
         <patterns>
             <pattern testClass="JUnit.MantisBT.AddTag1Test"/>
-            <pattern testClass="JUnit.MantisBT.StopFilter1Test"/>
+            <pattern testClass="JUnit.MantisBT.aStopFilter1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateFilter1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateNote1Test"/>
             <pattern testClass="JUnit.MantisBT.CreateProject1Test"/>
@@ -18,10 +18,10 @@
             <pattern testClass="JUnit.MantisBT.ReadAdminInfo1Test"/>
             <pattern testClass="JUnit.MantisBT.UpdateUserInfo1Test"/>
             <pattern testClass="JUnit.MantisBT.UpdateWorkflow1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteNote1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteUser1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteReport1Test"/>
-            <pattern testClass="JUnit.MantisBT.DeleteProject1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteNote1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteUser1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteReport1Test"/>
+            <pattern testClass="JUnit.MantisBT.zDeleteProject1Test"/>
         </patterns>
         <method v="2">
             <option name="Make" enabled="true"/>
@@ -43,7 +43,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="8784" locationUrl="java:suite://JUnit.MantisBT.StopFilter1Test" name="StopFilter1Test" status="passed">
+    <suite duration="8784" locationUrl="java:suite://JUnit.MantisBT.aStopFilter1Test" name="StopFilter1Test" status="passed">
         <test duration="8784" locationUrl="java:test://JUnit.MantisBT.StopFilter1Test/stopFilter1" name="stopFilter1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 35614
 Only local connections are allowed.
@@ -155,7 +155,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="5870" locationUrl="java:suite://JUnit.MantisBT.DeleteNote1Test" name="DeleteNote1Test" status="passed">
+    <suite duration="5870" locationUrl="java:suite://JUnit.MantisBT.zDeleteNote1Test" name="DeleteNote1Test" status="passed">
         <test duration="5870" locationUrl="java:test://JUnit.MantisBT.DeleteNote1Test/deleteNote1" name="deleteNote1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 41764
 Only local connections are allowed.
@@ -166,7 +166,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="6389" locationUrl="java:suite://JUnit.MantisBT.DeleteUser1Test" name="DeleteUser1Test" status="passed">
+    <suite duration="6389" locationUrl="java:suite://JUnit.MantisBT.zDeleteUser1Test" name="DeleteUser1Test" status="passed">
         <test duration="6389" locationUrl="java:test://JUnit.MantisBT.DeleteUser1Test/deleteUser1" name="deleteUser1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 29875
 Only local connections are allowed.
@@ -177,7 +177,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="4039" locationUrl="java:suite://JUnit.MantisBT.DeleteReport1Test" name="DeleteReport1Test" status="passed">
+    <suite duration="4039" locationUrl="java:suite://JUnit.MantisBT.zDeleteReport1Test" name="DeleteReport1Test" status="passed">
         <test duration="4039" locationUrl="java:test://JUnit.MantisBT.DeleteReport1Test/deleteReport1" name="deleteReport1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 12285
 Only local connections are allowed.
@@ -188,7 +188,7 @@ INFO: Detected dialect: W3C
 </output>
         </test>
     </suite>
-    <suite duration="6992" locationUrl="java:suite://JUnit.MantisBT.DeleteProject1Test" name="DeleteProject1Test" status="passed">
+    <suite duration="6992" locationUrl="java:suite://JUnit.MantisBT.zDeleteProject1Test" name="DeleteProject1Test" status="passed">
         <test duration="6992" locationUrl="java:test://JUnit.MantisBT.DeleteProject1Test/deleteProject1" name="deleteProject1" metainfo="" status="passed">
             <output type="stderr">Starting ChromeDriver 114.0.5735.90 (386bc09e8f4f2e025eddae123f36f6263096ae49-refs/branch-heads/5735@{#1052}) on port 34153
 Only local connections are allowed.

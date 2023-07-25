@@ -14,13 +14,15 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.*;
 
-public class StopFilter1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+public class aStopFilter1Test {
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -29,7 +31,7 @@ public class StopFilter1Test {
     driver.quit();
   }
   @Test
-  public void stopFilter1() throws InterruptedException {
+  public void aStopFilter1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(766, 640));
     driver.findElement(By.id("username")).sendKeys("Chris95");
@@ -51,5 +53,22 @@ public class StopFilter1Test {
     }
     driver.findElement(By.cssSelector(".no-float")).click();
     driver.findElement(By.name("reset_query_button")).click();
+
+
+
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div/h4")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'filter\']/div[3]")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[2]")).click();
+    driver.findElement(By.xpath("//th[3]")).click();
+    driver.findElement(By.xpath("//th[4]")).click();
+    driver.findElement(By.xpath("//table[@id=\'buglist\']/thead/tr/th[5]")).click();
+    driver.findElement(By.xpath("//th[8]")).click();
+    driver.findElement(By.xpath("//form[@id=\'bug_action\']/div/div/h4/span")).click();
   }
 }

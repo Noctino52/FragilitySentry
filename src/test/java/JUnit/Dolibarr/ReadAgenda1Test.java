@@ -14,12 +14,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class ReadAgenda1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -37,5 +38,13 @@ public class ReadAgenda1Test {
     driver.findElement(By.cssSelector(".agenda")).click();
     driver.findElement(By.cssSelector(".fa-calendar-week")).click();
     driver.findElement(By.cssSelector(".fa-calendar-day")).click();
+
+    driver.findElement(By.id("select2-search_projectid-container")).click();
+    driver.findElement(By.id("selectsearch_status")).click();
+    driver.findElement(By.id("select2-search_socid-container")).click();
+    driver.findElement(By.id("select2-search_filtert-container")).click();
+    driver.findElement(By.id("select2-search_actioncode-container")).click();
+    driver.findElement(By.id("check_birthday")).click();
+    driver.findElement(By.id("check_birthday")).click();
   }
 }

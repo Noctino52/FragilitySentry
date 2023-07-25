@@ -11,16 +11,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
 public class CreateUser1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -55,5 +58,27 @@ public class CreateUser1Test {
     }
     driver.findElement(By.cssSelector("tr:nth-child(6) .lbl")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
+
+
+
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[2]/p")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[2]/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
+    {
+      WebElement element = driver.findElement(By.xpath("//img[@alt=\'Powered by Mantis Bug Tracker: a free and open source web based bug tracking system.\']"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/ul/li/i")).click();
+    driver.findElement(By.xpath("//button[@id=\'menu-toggler\']")).click();
+    driver.findElement(By.xpath("//button[@id=\'menu-toggler\']")).click();
+    {
+      WebElement element = driver.findElement(By.xpath("//button[@id=\'menu-toggler\']"));
+      Actions builder = new Actions(driver);
+      builder.doubleClick(element).perform();
+    }
   }
 }

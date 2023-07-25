@@ -15,12 +15,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
 public class CreateTag1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -50,5 +52,23 @@ public class CreateTag1Test {
       List<WebElement> elements = driver.findElements(By.cssSelector(".widget-box:nth-child(1) .widget-title"));
       assert(elements.size() > 0);
     }
+
+
+
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td[2]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[3]")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td[4]")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr[2]/td")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr[2]/td")).click();
+    driver.findElement(By.name("name")).click();
+    driver.findElement(By.xpath("//textarea[@id=\'tag-description\']")).click();
   }
 }

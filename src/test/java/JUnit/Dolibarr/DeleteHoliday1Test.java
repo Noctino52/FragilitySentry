@@ -14,12 +14,13 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 
 public class DeleteHoliday1Test {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  private  WebDriver driver=new ChromeDriver();
+  private Map<String, Object> vars=new HashMap<String, Object>();
+  JavascriptExecutor js= (JavascriptExecutor) driver;
+
+  public void setUp(WebDriver driver) {
+    this.driver.quit();
+    this.driver=driver;
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -44,5 +45,14 @@ public class DeleteHoliday1Test {
     driver.findElement(By.cssSelector(".fa-toggle-on")).click();
     driver.findElement(By.cssSelector(".reposition > .fas")).click();
     driver.findElement(By.name("buttonreset")).click();
+
+
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[2]/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[2]/b")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div/ul/li/a/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div[3]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/span")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
   }
 }
