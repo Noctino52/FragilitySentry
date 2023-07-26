@@ -31,7 +31,7 @@ public class JUnitRunner {
         String directoryDolibarr="src/test/java/JUnit/Dolibarr";
         String directoryMantisBT="src/test/java/JUnit/MantisBT";
 
-        List<Test> magentoTests=Test.getAllTests(directoryDolibarr);
+        List<Test> magentoTests=Test.getAllTests(directoryMagento);
         TestRunner testRunner=new TestRunner(magentoTests);
         List<Test> testsWithSelector=testRunner.executeTests();
 

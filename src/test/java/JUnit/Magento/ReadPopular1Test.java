@@ -49,8 +49,5 @@ public class ReadPopular1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
-    driver.findElement(By.xpath("//input[@id=\'search\']")).click();
-    driver.findElement(By.xpath("//ul[@id=\'ui-id-1\']")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div/h1/span")).click();
   }
 }

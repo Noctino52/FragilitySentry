@@ -72,5 +72,15 @@ public class ReadTemplate1Test {
     driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
     driver.findElement(By.name("limit")).click();
     driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
+    driver.findElement(By.name("limit")).click();
+    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
+    driver.findElement(By.name("limit")).click();
+    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
   }
 }
