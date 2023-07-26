@@ -41,5 +41,8 @@ public class CreateReport1Test {
     driver.findElement(By.linkText("Reportistiche")).click();
     driver.findElement(By.cssSelector(".button")).click();
 
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div")).click();
+
   }
 }

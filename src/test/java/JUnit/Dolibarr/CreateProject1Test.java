@@ -156,5 +156,10 @@ public class CreateProject1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+    {
+      WebElement element = driver.findElement(By.id("element"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }

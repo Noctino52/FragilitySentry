@@ -52,5 +52,12 @@ public class DeleteBackup1Test {
     driver.findElement(By.id("radio_compression_gzip")).click();
     driver.findElement(By.id("radio_compression_none")).click();
     driver.findElement(By.id("radio_compression_gzip")).click();
+    driver.findElement(By.id("radio_dump_mysql_nobin")).click();
+    driver.findElement(By.id("radio_dump_mysql")).click();
+    driver.findElement(By.id("radio_dump_mysql_nobin")).click();
+    driver.findElement(By.id("filename_template")).click();
+    driver.findElement(By.id("radio_compression_gzip")).click();
+    driver.findElement(By.id("radio_compression_none")).click();
+    driver.findElement(By.id("radio_compression_gzip")).click();
   }
 }

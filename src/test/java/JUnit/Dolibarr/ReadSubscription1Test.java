@@ -42,7 +42,5 @@ public class ReadSubscription1Test {
     driver.findElement(By.name("search_ref")).click();
     driver.findElement(By.name("search_firstname")).click();
     driver.findElement(By.name("search_lastname")).click();
-    driver.findElement(By.name("search_company")).click();
-    driver.findElement(By.name("search_login")).click();
   }
 }
