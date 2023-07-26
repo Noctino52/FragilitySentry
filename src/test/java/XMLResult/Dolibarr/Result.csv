@@ -1,4 +1,4 @@
-Nome del test,Dolibarr13,Dolibarr14.0,Dolibarr14.2,Dolibarr14.5,Dolibarr15
+Nome del test,Dolibarr13,Dolibarr14.0,Dolibarr14.2,Dolibarr14.5,Dolibarr15,MetricV1,MetricV2
 createCompany1,passed,error,error,error,error,4.54,4.65
 createProject1,passed,passed,passed,passed,passed,9.10,9.08
 createReport1,passed,passed,passed,passed,error,5.90,5.43
