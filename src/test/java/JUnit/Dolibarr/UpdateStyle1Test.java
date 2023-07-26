@@ -65,5 +65,13 @@ public class UpdateStyle1Test {
     driver.findElement(By.id("MAIN_MENUFRONT_STANDARD")).click();
     driver.findElement(By.id("MAIN_MENU_SMARTPHONE")).click();
     driver.findElement(By.id("MAIN_MENUFRONT_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENU_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENU_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENU_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_STANDARD")).click();
+    driver.findElement(By.id("MAIN_MENU_SMARTPHONE")).click();
+    driver.findElement(By.id("MAIN_MENUFRONT_SMARTPHONE")).click();
   }
 }

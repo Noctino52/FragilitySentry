@@ -135,5 +135,26 @@ public class CreateProject1Test {
     }
     driver.findElement(By.id("select2-model-container")).click();
     driver.findElement(By.id("id-right")).click();
+    driver.findElement(By.id("id-right")).click();
+    {
+      WebElement element = driver.findElement(By.id("tasks"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("tasks"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("timespent"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("element"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }

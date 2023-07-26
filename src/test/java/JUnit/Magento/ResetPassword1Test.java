@@ -63,5 +63,47 @@ public class ResetPassword1Test {
     driver.findElement(By.cssSelector(".reload > span")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".submit > span")).click();
+
+
+    {
+      WebElement element = driver.findElement(By.id("email_address"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("captcha_user_forgotpassword"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("newsletter"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("search"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("email_address"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("captcha_user_forgotpassword"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("newsletter"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("search"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }

@@ -43,23 +43,23 @@ public class Judge {
                 elementScore=10;
                 break;
             case "CssSelector":
-                elementScore=8;
-                if(canBeIdWithCss(selector,document))elementScore-=2;
+                elementScore=6;
+                //if(canBeIdWithCss(selector,document))elementScore-=2;
                 break;
             case "XPath":
-                elementScore=5;
-                if(canBeIdWithXPath(selector,document))elementScore-=3;
+                elementScore=4;
+                //if(canBeIdWithXPath(selector,document))elementScore-=3;
                 if(!isXPathAbsolute(selector.getSelector()))elementScore-=1;
                 break;
             case "TagName":
-                elementScore=7;
+                elementScore=6;
                 if(!isTagMultiple(selector,document))elementScore-=1;
                 break;
             case "LinkText":
-                elementScore=5;
+                elementScore=4;
                 break;
             default:
-                elementScore=4;
+                elementScore=3;
                 break;
         }
         return elementScore;

@@ -40,5 +40,14 @@ public class ReadProduct1Test {
     driver.findElement(By.xpath("//input[@id=\'name\']")).sendKeys("Pera");
     driver.findElement(By.cssSelector(".primary > .search > span")).click();
     driver.findElement(By.xpath("//a[@id=\'mode-list\']")).click();
+
+
+
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div[2]")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div[2]/div/div[2]")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div/h1/span")).click();
   }
 }

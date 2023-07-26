@@ -50,8 +50,5 @@ public class UpdateValidityFile1Test {
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td[2]/div")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td[2]")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/form/span")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/table/tbody/tr/td[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[3]/tbody/tr/td[2]/div")).click();
   }
 }

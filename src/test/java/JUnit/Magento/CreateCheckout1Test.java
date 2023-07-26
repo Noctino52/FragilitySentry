@@ -67,5 +67,25 @@ public class CreateCheckout1Test {
     driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
     driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
     driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
+    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
   }
 }

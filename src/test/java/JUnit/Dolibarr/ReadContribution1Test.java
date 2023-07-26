@@ -39,23 +39,11 @@ public class ReadContribution1Test {
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Adesioni")).click();
 
-
-
-
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr/th")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr/th")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[2]/td")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[2]/td")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[3]/td")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div[2]/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div[2]/table/tbody/tr/th[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div[2]/table/tbody/tr[2]/td[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div[2]/table/tbody/tr[2]/td[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div[2]/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div[2]/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div[3]/table/tbody/tr/th[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div[3]/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div[2]/div/div[3]/table/tbody/tr/th[2]")).click();
   }
 }

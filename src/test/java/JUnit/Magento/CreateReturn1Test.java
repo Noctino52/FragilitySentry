@@ -48,5 +48,17 @@ public class CreateReturn1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
+
+
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div/h1/span")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[2]/div[2]/div/div/div")).click();
+    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[2]/div[2]/div/div/div")).click();
+    driver.findElement(By.xpath("//form[@id=\'oar-widget-orders-and-returns-form\']/fieldset/legend/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'oar-widget-orders-and-returns-form\']/fieldset/div[3]/label/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'oar-widget-orders-and-returns-form\']/fieldset/div[2]/label/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'oar-widget-orders-and-returns-form\']/fieldset/div/label/span")).click();
+    driver.findElement(By.xpath("//div[@id=\'oar-email\']/label/span")).click();
+    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div/div")).click();
   }
 }

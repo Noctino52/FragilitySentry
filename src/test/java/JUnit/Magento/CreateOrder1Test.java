@@ -50,6 +50,26 @@ public class CreateOrder1Test {
     Thread.sleep(2000);
     js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.xpath("//div[3]/button/span")).click();
+
+
+
+
+
+
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_prefix\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_firstname\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_middlename\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_lastname\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar_data_compared\']/div/h5")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar_data_pviewed\']/div/h5")).click();
+    driver.findElement(By.xpath("//div[3]/button/span")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_prefix\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_firstname\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_middlename\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'order-billing_address_lastname\']")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar_data_compared\']/div/h5")).click();
+    driver.findElement(By.xpath("//div[@id=\'sidebar_data_pviewed\']/div/h5")).click();
+    driver.findElement(By.xpath("//div[3]/button/span")).click();
     driver.findElement(By.xpath("//input[@id=\'order-billing_address_prefix\']")).click();
     driver.findElement(By.xpath("//input[@id=\'order-billing_address_firstname\']")).click();
     driver.findElement(By.xpath("//input[@id=\'order-billing_address_middlename\']")).click();

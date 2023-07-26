@@ -54,9 +54,20 @@ public class ReadExtension1Test {
     driver.findElement(By.linkText("1")).click();
     driver.findElement(By.xpath("//main/div/div/span")).click();
     driver.findElement(By.xpath("//section/div/header")).click();
+
+    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/div")).click();
     driver.findElement(By.xpath("//div[@id=\'container\']/section/div/div")).click();
     driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
     driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
+
     Thread.sleep(2000);
     driver.findElement(By.cssSelector("#menu-magento-marketplace-partners > a")).click();
     js.executeScript("window.scrollBy(0,200)", "");

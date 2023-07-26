@@ -42,6 +42,18 @@ public class UpdatePage1Test {
   public void updatePage1() throws InterruptedException {
     driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("login")).click();
     driver.findElement(By.id("username")).sendKeys("user");
     driver.findElement(By.id("login")).sendKeys("bitnami1");
     driver.findElement(By.id("login")).sendKeys(Keys.ENTER);

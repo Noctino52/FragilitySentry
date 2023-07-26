@@ -46,30 +46,5 @@ public class DeleteProductLot1Test {
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table[2]/tbody/tr/td")).click();
     driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
     driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
-    driver.findElement(By.xpath("//span[@id=\'select2-search_nature-container\']")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[3]")).click();
-    driver.findElement(By.xpath("//input[@id=\'search_keyword\']")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[3]/div/input")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Moduli disponibili\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Trova app/moduli esterni...\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("(//a[contains(text(),\'Trova app/moduli esterni...\')])[2]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Sviluppa il tuo modulo/app\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
   }
 }

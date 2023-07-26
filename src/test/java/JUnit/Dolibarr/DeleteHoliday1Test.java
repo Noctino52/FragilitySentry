@@ -46,13 +46,8 @@ public class DeleteHoliday1Test {
     driver.findElement(By.cssSelector(".reposition > .fas")).click();
     driver.findElement(By.name("buttonreset")).click();
 
-
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td/div")).click();
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[2]/span")).click();
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[2]/b")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div/ul/li/a/span")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/span")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
   }
 }

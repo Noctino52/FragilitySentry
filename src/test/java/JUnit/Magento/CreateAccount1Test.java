@@ -4,11 +4,9 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
@@ -48,5 +46,23 @@ public class CreateAccount1Test {
     driver.findElement(By.cssSelector(".submit > span")).click();
     Thread.sleep(1000);
     driver.findElement(By.linkText("click here")).click();
+
+
+    driver.findElement(By.id("email_address")).click();
+    driver.findElement(By.id("captcha_user_forgotpassword")).click();
+    {
+      WebElement element = driver.findElement(By.id("newsletter"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("search")).click();
+    driver.findElement(By.id("email_address")).click();
+    driver.findElement(By.id("captcha_user_forgotpassword")).click();
+    {
+      WebElement element = driver.findElement(By.id("newsletter"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("search")).click();
   }
 }

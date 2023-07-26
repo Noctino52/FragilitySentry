@@ -63,5 +63,9 @@ public class DeleteCart1Test {
     driver.findElement(By.id("ui-id-1")).click();
     driver.findElement(By.id("switcher-currency-trigger")).click();
     driver.findElement(By.id("switcher-currency-trigger")).click();
+    driver.findElement(By.id("ui-id-1")).click();
+    driver.findElement(By.id("ui-id-1")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
+    driver.findElement(By.id("switcher-currency-trigger")).click();
   }
 }

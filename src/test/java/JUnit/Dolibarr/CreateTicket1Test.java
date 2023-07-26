@@ -52,5 +52,8 @@ public class CreateTicket1Test {
     driver.findElement(By.xpath("//div[2]/div/div[2]/div/div/div[4]")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div/div/div[2]/span")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div[2]/div")).click();
+    driver.findElement(By.xpath("//tr[4]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[3]/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div[2]/div")).click();
   }
 }

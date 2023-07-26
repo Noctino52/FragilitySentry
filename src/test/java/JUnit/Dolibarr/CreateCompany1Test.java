@@ -55,5 +55,21 @@ public class CreateCompany1Test {
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[11]/td[2]/input")).click();
     driver.findElement(By.xpath("//input[@id=\'web\']")).click();
     driver.findElement(By.xpath("//input[@id=\'barcode\']")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
+    driver.findElement(By.cssSelector("#MAIN_INFO_SOCIETE_ZIP")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[9]/td[2]/input")).click();
+    driver.findElement(By.cssSelector("#fax")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[11]/td[2]/input")).click();
+    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'barcode\']")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
+    driver.findElement(By.cssSelector("#MAIN_INFO_SOCIETE_ZIP")).click();
+    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[9]/td[2]/input")).click();
+    driver.findElement(By.cssSelector("#fax")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[11]/td[2]/input")).click();
+    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'barcode\']")).click();
   }
 }

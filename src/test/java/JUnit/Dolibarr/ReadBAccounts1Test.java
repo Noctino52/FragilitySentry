@@ -52,6 +52,19 @@ public class ReadBAccounts1Test {
     driver.findElement(By.linkText("Conto di contabilità")).click();
     driver.findElement(By.linkText("Accounting code journal")).click();
     driver.findElement(By.linkText("Stato")).click();
+    driver.findElement(By.name("search_ref")).click();
+    driver.findElement(By.name("search_label")).click();
+    driver.findElement(By.name("search_number")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td[8]/span/span/span/span[2]")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td[8]/span/span/span/span[2]")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td[10]/div/button[2]/span")).click();
+    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div/div/span/span/span/ul")).click();
+    driver.findElement(By.linkText("Conti bancari")).click();
+    driver.findElement(By.linkText("Titolo")).click();
+    driver.findElement(By.linkText("Numero di conto")).click();
+    driver.findElement(By.linkText("Conto di contabilità")).click();
+    driver.findElement(By.linkText("Accounting code journal")).click();
+    driver.findElement(By.linkText("Stato")).click();
 
 
   }

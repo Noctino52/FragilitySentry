@@ -44,16 +44,5 @@ public class ReadSubscription1Test {
     driver.findElement(By.name("search_lastname")).click();
     driver.findElement(By.name("search_company")).click();
     driver.findElement(By.name("search_login")).click();
-    driver.findElement(By.xpath("//select[@id=\'search_type\']")).click();
-    driver.findElement(By.xpath("//select[@id=\'search_type\']")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("//select[@id=\'search_type\']"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
-    driver.findElement(By.name("search_email")).click();
-    driver.findElement(By.cssSelector(".div-table-responsive")).click();
-    driver.findElement(By.xpath("//select[@id=\'search_filter\']")).click();
-    driver.findElement(By.xpath("//select[@id=\'search_filter\']")).click();
   }
 }

@@ -69,5 +69,23 @@ public class CreateHelp1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
+
+
+    driver.findElement(By.id("comment")).click();
+    driver.findElement(By.id("telephone")).click();
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("telephone")).click();
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("comment")).click();
+    driver.findElement(By.id("comment")).click();
+    driver.findElement(By.id("telephone")).click();
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("telephone")).click();
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("comment")).click();
   }
 }
