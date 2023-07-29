@@ -48,10 +48,14 @@ public class CreateHelp1Test {
       builder.moveToElement(element, 0, 0).perform();
     }
     driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("name")).click();
     driver.findElement(By.id("name")).sendKeys("Mario");
+    driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).sendKeys("prova@prova.com");
     driver.findElement(By.id("comment")).click();
+    driver.findElement(By.id("comment")).click();
     Thread.sleep(1000);
+    driver.findElement(By.id("comment")).click();
     driver.findElement(By.id("comment")).sendKeys("Ho un problema");
     driver.findElement(By.cssSelector(".submit > span")).click();
     {
@@ -69,23 +73,7 @@ public class CreateHelp1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
-
-
     driver.findElement(By.id("comment")).click();
     driver.findElement(By.id("telephone")).click();
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("telephone")).click();
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("comment")).click();
-    driver.findElement(By.id("comment")).click();
-    driver.findElement(By.id("telephone")).click();
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("telephone")).click();
-    driver.findElement(By.id("email")).click();
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("comment")).click();
   }
 }

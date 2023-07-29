@@ -43,24 +43,16 @@ public class UpdatePage1Test {
     driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
     driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("login")).click();
     driver.findElement(By.id("username")).sendKeys("user");
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("login")).click();
     driver.findElement(By.id("login")).sendKeys("bitnami1");
     driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("#menu-magento-backend-content > a > span")).click();
     Thread.sleep(1000);
-    driver.findElement(By.linkText("Pages")).click();
+    driver.findElement(By.cssSelector(".item-cms-page > a")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".data-row:nth-child(2) .action-select")).click();
     driver.findElement(By.linkText("Edit")).click();
@@ -69,5 +61,195 @@ public class UpdatePage1Test {
     driver.findElement(By.cssSelector(".admin__actions-switch-label")).click();
     Thread.sleep(1000);
     driver.findElement(By.id("save-button")).click();
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_privacy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("footer_bug_tracking"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+
   }
 }

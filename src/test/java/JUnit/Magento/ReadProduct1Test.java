@@ -36,18 +36,9 @@ public class ReadProduct1Test {
     Thread.sleep(3000);
     driver.findElement(By.xpath("//div[contains(@class, \'nav-sections-items\') and not(contains(@class, \'mage-tabs-disabled\'))]")).click();
     driver.findElement(By.cssSelector(".nav:nth-child(5) > a")).click();
-    driver.findElement(By.xpath("//input[@id=\'name\']")).click();
-    driver.findElement(By.xpath("//input[@id=\'name\']")).sendKeys("Pera");
+    driver.findElement(By.id("name")).click();
+    driver.findElement(By.id("name")).sendKeys("Pera");
     driver.findElement(By.cssSelector(".primary > .search > span")).click();
-    driver.findElement(By.xpath("//a[@id=\'mode-list\']")).click();
-
-
-
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div[2]")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div[3]/div[2]/div/div[2]")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div")).click();
-    driver.findElement(By.xpath("//main[@id=\'maincontent\']/div/h1/span")).click();
+    driver.findElement(By.id("mode-list")).click();
   }
 }

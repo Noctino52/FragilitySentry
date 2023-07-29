@@ -36,7 +36,7 @@ public class ReadPopular1Test {
     driver.findElement(By.cssSelector(".nav:nth-child(1) > a")).click();
     Thread.sleep(1000);
     assertThat(driver.findElement(By.cssSelector(".base")).getText(), is("Popular Search Terms"));
-    driver.findElement(By.xpath("//input[@id=\'newsletter\']")).click();
+    driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div[2]/button/span")).click();
     driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div/div")).click();
     driver.findElement(By.xpath("//form[@id=\'newsletter-validate-detail\']/div[2]/button/span")).click();
     {

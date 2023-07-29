@@ -46,23 +46,7 @@ public class CreateAccount1Test {
     driver.findElement(By.cssSelector(".submit > span")).click();
     Thread.sleep(1000);
     driver.findElement(By.linkText("click here")).click();
-
-
     driver.findElement(By.id("email_address")).click();
     driver.findElement(By.id("captcha_user_forgotpassword")).click();
-    {
-      WebElement element = driver.findElement(By.id("newsletter"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.id("search")).click();
-    driver.findElement(By.id("email_address")).click();
-    driver.findElement(By.id("captcha_user_forgotpassword")).click();
-    {
-      WebElement element = driver.findElement(By.id("newsletter"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.id("search")).click();
   }
 }

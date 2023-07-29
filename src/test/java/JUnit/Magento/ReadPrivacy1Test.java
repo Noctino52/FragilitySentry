@@ -5,12 +5,11 @@ import org.junit.After;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+
 import java.util.*;
 
 public class ReadPrivacy1Test {
@@ -46,16 +45,23 @@ public class ReadPrivacy1Test {
   public void readPrivacy1() throws InterruptedException {
     driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("user");
-    driver.findElement(By.id("login")).sendKeys("bitnami1");
-    driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("login[username]")).sendKeys("user");
+    driver.findElement(By.name("login[password]")).sendKeys("bitnami1");
+    driver.findElement(By.name("login[password]")).sendKeys(Keys.ENTER);
     Thread.sleep(2000);
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//main[@id=\'anchor-content\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'container\']/section/div/header")).click();
-    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'container\']/div/div/div/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'container\']/div/div[2]/div[2]/div")).click();
+    {
+      WebElement element = driver.findElement(By.id("store-change-button"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("grid_tab_reviewed_products"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("grid_tab_customers")).click();
+    driver.findElement(By.id("grid_tab_reviewed_products")).click();
+    driver.findElement(By.id("grid_tab_ordered_products")).click();
     driver.findElement(By.cssSelector("#menu-magento-marketplace-partners > a")).click();
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".page-footer")).click();

@@ -34,9 +34,11 @@ public class ReadTemplate1Test {
   public void readTemplate1() throws InterruptedException {
     driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("user");
-    driver.findElement(By.id("login")).sendKeys("bitnami1");
-    driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("login[username]")).click();
+    driver.findElement(By.name("login[username]")).sendKeys("user");
+    driver.findElement(By.name("login[password]")).click();
+    driver.findElement(By.name("login[password]")).sendKeys("bitnami1");
+    driver.findElement(By.name("login[password]")).sendKeys(Keys.ENTER);
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("#menu-magento-backend-marketing > a")).click();
     Thread.sleep(1000);
@@ -54,33 +56,5 @@ public class ReadTemplate1Test {
     }
     driver.findElement(By.xpath("//a[contains(text(),\'1\')]")).click();
     driver.findElement(By.xpath("//div[2]/div/button/span")).click();
-    driver.findElement(By.xpath("//main[@id=\'anchor-content\']/div")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
-    driver.findElement(By.name("limit")).click();
-    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
-
-
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
-    driver.findElement(By.name("limit")).click();
-    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
-    driver.findElement(By.name("limit")).click();
-    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
-    driver.findElement(By.name("limit")).click();
-    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/header/div/div/h1")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/p")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[3]/footer/div/div/div/p/strong")).click();
-    driver.findElement(By.name("limit")).click();
-    driver.findElement(By.xpath("//div[@id=\'systemEmailTemplateGrid\']/div")).click();
   }
 }

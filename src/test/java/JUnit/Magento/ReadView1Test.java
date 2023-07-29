@@ -56,5 +56,15 @@ public class ReadView1Test {
       WebElement dropdown = driver.findElement(By.name("store_id"));
       dropdown.findElement(By.xpath("//option[. = '            Default Store View']")).click();
     }
+    driver.findElement(By.xpath("//div[2]/button")).click();
+    driver.findElement(By.id("10")).click();
+    driver.findElement(By.id("11")).click();
+    driver.findElement(By.id("12")).click();
+    driver.findElement(By.id("13")).click();
+    driver.findElement(By.id("13")).click();
+    driver.findElement(By.id("14")).click();
+    driver.findElement(By.id("15")).click();
+    driver.findElement(By.id("16")).click();
+    driver.findElement(By.id("18")).click();
   }
 }

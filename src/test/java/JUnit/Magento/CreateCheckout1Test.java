@@ -63,29 +63,5 @@ public class CreateCheckout1Test {
     driver.findElement(By.cssSelector(".\\_active > span")).click();
     driver.findElement(By.cssSelector(".opc-progress-bar-item:nth-child(2) > span")).click();
     driver.findElement(By.cssSelector("strong > span:nth-child(2)")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
-    driver.findElement(By.xpath("//body[@id=\'html-body\']/div[2]/header/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[2]/div/input")).click();
-    driver.findElement(By.xpath("//div[@id=\'shipping-new-address-form\']/div[3]/div/input")).click();
   }
 }

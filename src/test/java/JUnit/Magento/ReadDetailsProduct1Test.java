@@ -8,6 +8,7 @@ import static org.hamcrest.core.IsNot.not;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.*;
 
@@ -31,9 +32,11 @@ public class ReadDetailsProduct1Test {
   public void readDetailsProduct1() throws InterruptedException {
     driver.get("http://localhost/admin");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.xpath("//input[@id=\'username\']")).sendKeys("user");
-    driver.findElement(By.xpath("//input[@id=\'login\']")).sendKeys("bitnami1");
-    driver.findElement(By.xpath("//input[@id=\'login\']")).sendKeys(Keys.ENTER);
+    driver.findElement(By.id("username")).click();
+    driver.findElement(By.id("username")).sendKeys("user");
+    driver.findElement(By.id("login")).click();
+    driver.findElement(By.id("login")).sendKeys("bitnami1");
+    driver.findElement(By.id("login")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector("#menu-magento-catalog-catalog > a")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector(".item-catalog-products span")).click();
@@ -50,5 +53,33 @@ public class ReadDetailsProduct1Test {
       fail("Lo scroll orizzontale non è stato eseguito correttamente.");
     }
     driver.findElement(By.cssSelector(".\\_odd-row .action-menu-item")).click();
+    driver.findElement(By.id("store-change-button")).click();
+    driver.findElement(By.id("store-change-button")).click();
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("store-change-button")).click();
+    driver.findElement(By.id("store-change-button")).click();
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("store-change-button")).click();
+    driver.findElement(By.id("store-change-button")).click();
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    driver.findElement(By.id("store-change-button")).click();
+    driver.findElement(By.id("store-change-button")).click();
+    {
+      WebElement element = driver.findElement(By.id("back"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }
