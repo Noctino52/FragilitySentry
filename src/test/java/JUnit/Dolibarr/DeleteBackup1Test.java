@@ -43,21 +43,11 @@ public class DeleteBackup1Test {
     driver.findElement(By.id("buttonGo")).click();
     js.executeScript("window.scrollBy(0,600)", "");
     driver.findElement(By.xpath("//tr[@id=\'row-AFTER0POS1\']/td[6]/a/span")).click();
-
-
     driver.findElement(By.id("radio_dump_mysql_nobin")).click();
     driver.findElement(By.id("radio_dump_mysql")).click();
     driver.findElement(By.id("radio_dump_mysql_nobin")).click();
     driver.findElement(By.id("filename_template")).click();
     driver.findElement(By.id("radio_compression_gzip")).click();
     driver.findElement(By.id("radio_compression_none")).click();
-    driver.findElement(By.id("radio_compression_gzip")).click();
-    driver.findElement(By.id("radio_dump_mysql_nobin")).click();
-    driver.findElement(By.id("radio_dump_mysql")).click();
-    driver.findElement(By.id("radio_dump_mysql_nobin")).click();
-    driver.findElement(By.id("filename_template")).click();
-    driver.findElement(By.id("radio_compression_gzip")).click();
-    driver.findElement(By.id("radio_compression_none")).click();
-    driver.findElement(By.id("radio_compression_gzip")).click();
   }
 }

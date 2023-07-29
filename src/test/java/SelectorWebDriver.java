@@ -17,7 +17,9 @@ public class SelectorWebDriver implements WebDriverListener {
 		documentPages.add(pageDocument);
 
 		Selector selectorUrl=new Selector(url,"url");
-		selectorUrl.setSelectorScore(Judge.getElementScore(selectorUrl,pageDocument));
+		Page page=new Page(pageDocument);
+		page.setPageComplexity(PageComplexityEvaluator.calculatePageComplexity(page));
+		selectorUrl.setSelectorFinalScore(Judge.getElementScore(selectorUrl,page));
 
 		WebDriverListener.super.beforeGet(driver, url);
 	}
@@ -28,19 +30,12 @@ public class SelectorWebDriver implements WebDriverListener {
 		Document pageDocument= Jsoup.parse(pageString);
 		documentPages.add(pageDocument);
 
-		Selector selector=createSelector(driver,locator);
-		selector.setSelectorScore(Judge.getElementScore(selector,pageDocument));
-		System.out.println(selector);
+		Selector selector=new Selector(locator);
+		Page page=new Page(pageDocument);
+		page.setPageComplexity(PageComplexityEvaluator.calculatePageComplexity(page));
+		selector.setSelectorFinalScore(Judge.getElementScore(selector,page));
+		System.out.println(selector+"   "+page);
 		selectorPages.add(selector);
-	}
-
-	private Selector createSelector(WebDriver driver, By locator) {
-		String type=locator.getClass().getSimpleName().replaceFirst("By", "");
-		String stringLocator=locator.toString();
-		int index = stringLocator.indexOf(":"); // Trova l'indice del primo carattere ":"
-		String selectorString = stringLocator.substring(index + 2);
-		System.out.println(selectorString);
-		return new Selector(selectorString,type);
 	}
 
 	@Override

@@ -7,8 +7,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-import org.python.util.PythonInterpreter;
-import org.python.core.PyString;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
@@ -16,11 +14,12 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import java.io.StringReader;
 import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public class Judge {
 
@@ -28,8 +27,71 @@ public class Judge {
     static float sumOfSelectorScore=0;
     static float numOfTestValutated=0;
 
-    public static float getElementScore(Selector selector, Document document) {
+    public static float getElementScore(Selector selector, Page documentPage) {
+        //return doMetricV2(selector,document);
+        return doMetricV3(selector,documentPage);
+    }
 
+    private static float doMetricV3(Selector selector, Page documentPage) {
+        Document document=documentPage.getPage();
+        float elementScore=-1;
+        float complexitySelectorScore=-1;
+        //Calcola punteggio:
+        //Vedere diagramma di flusso
+        String type=selector.getType();
+        String selectorString=selector.getSelector();
+
+        // Calcola punteggio di complessità della pagina
+        float complexityPageScore = documentPage.getPageScore();
+
+        switch (type){
+            case "url":
+                if(isPartialUrl(selector))complexitySelectorScore=0;
+                else complexitySelectorScore=4;
+                break;
+            case "Id":
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateIdSelectorComplexity(selectorString);;
+                break;
+            case "CssSelector":
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateCssSelectorComplexity(selectorString);
+
+                break;
+            case "XPath":
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateXPathSelectorComplexity(selectorString);
+                if(!isXPathAbsolute(selector.getSelector()))elementScore-=1;
+
+                break;
+            case "TagName":
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateTagNameSelectorComplexity(selectorString);
+                if(!isTagMultiple(selector,document))complexitySelectorScore-=1;
+                break;
+            case "LinkText":
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateLinkTextSelectorComplexity(selectorString);
+                break;
+            default:
+                complexitySelectorScore=8;
+        }
+        selector.setSelectorComplexity(complexitySelectorScore);
+
+        //Il punteggio è inversamente propozionato alla complessità del selettore/pagina
+        elementScore=Math.abs(complexitySelectorScore-10);
+        float pageScore = Math.abs(complexityPageScore - 10);
+
+        documentPage.setPageScore(pageScore);
+        selector.setSelectorScore(elementScore);
+
+        // Ponderazione per combinare i punteggi del selettore e di complessità
+        float selectorWeight = 0.8f; // Peso del punteggio del selettore (puoi regolare il valore)
+        float PageWeight = 0.2f; // Peso del punteggio di complessità (puoi regolare il valore)
+
+        // Combina i punteggi ponderati del selettore e di complessità per ottenere il punteggio finale
+        float totalScore = (selectorWeight * elementScore) + (PageWeight * pageScore);
+
+
+        return totalScore;
+    }
+
+    private static float doMetricV2(Selector selector, Document document) {
         float elementScore=-1;
         //Calcola punteggio:
         //Vedere diagramma di flusso
@@ -128,23 +190,87 @@ public class Judge {
         return lastSelector.getSelectorScore()-100;
     }
 
-    public static double getTestScore(Test test) {
+    public static double getTestScoreGeometry(Test test) {
 
 
             double prodotto = 1;
             int n = test.getSelectors().size();
 
             for (Selector tes : test.getSelectors()) {
-                double numtes=tes.getSelectorScore();
+                double numtes=tes.getSelectorFinalScore();
                 prodotto *= numtes;
             }
-            numOfTestValutated+=1;
             //System.out.println("Punteggio Test Num "+numOfTestValutated+" Calcolo: "+prodotto+"^(1/"+n+") \n" );
             return Math.pow(prodotto, 1.0 / n);
         }
 
+    public static double getTestScore(Test test) {
+        double sumInverseScores = 0;
+        int n = test.getSelectors().size();
+
+        for (Selector tes : test.getSelectors()) {
+            double numtes = tes.getSelectorFinalScore();
+            sumInverseScores += 1.0 / numtes;
+        }
+
+        numOfTestValutated += 1;
+        double harmonicMean = n / sumInverseScores;
+
+
+        //Media geometrica
+        double geometryMean= getTestScoreGeometry(test);
+        //Media Aritmentica
+        double arithmeticMean= getTestScoreAritmetich(test);
+        //Media Quadratica
+        double quadraticMean= getTestScoreQuadraticMean(test);
+
+
+        //Stampa per il confronto delle medie
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+        symbols.setDecimalSeparator('.');
+        DecimalFormat df = new DecimalFormat("0.00",symbols);
+        System.out.println("Punteggio Test Num " + numOfTestValutated + ": \n" +
+                "CalcoloGeometrico: " + df.format(geometryMean) + " CalcoloArmonico: " + df.format(harmonicMean) +
+                " CalcoloAritmentico: " + df.format(arithmeticMean) +"CalcoloQuadratico: " + df.format(quadraticMean) +  "\n");
+
+        return harmonicMean;
+    }
+
+    private static double getTestScoreAritmetich(Test test) {
+        double sumScores = 0;
+        int n = test.getSelectors().size();
+
+        for (Selector tes : test.getSelectors()) {
+            double numtes = tes.getSelectorFinalScore();
+            sumScores += numtes;
+        }
+
+        double arithmeticMean = sumScores / n;
+
+        // Stampa per debug
+        // System.out.println("Punteggio Test Num " + numOfTestValutated + " Calcolo: " + arithmeticMean + "\n");
+
+        return arithmeticMean;
+    }
+
+    public static double getTestScoreQuadraticMean(Test test) {
+        double sumSquares = 0;
+        int n = test.getSelectors().size();
+
+        for (Selector tes : test.getSelectors()) {
+            double numtes = tes.getSelectorFinalScore();
+            sumSquares += Math.pow(numtes, 2);
+        }
+        double quadraticMean = Math.sqrt(sumSquares / n);
+
+        // Stampa per debug
+        // System.out.println("Punteggio Test Num " + numOfTestValutated + " Calcolo: " + quadraticMean + "\n");
+
+        return quadraticMean;
+    }
+
     /*
-    public static float getTestScore(Test test) {
+    public static float getTestScoreGeometry(Test test) {
         float arithmeticAverage;
         float wasteAverage;
         arithmeticAverage=arithmeticAverage(test);

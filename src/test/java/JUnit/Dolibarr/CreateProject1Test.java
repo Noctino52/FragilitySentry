@@ -34,7 +34,7 @@ public class CreateProject1Test {
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.id("password")).sendKeys("dolibarr");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
-    driver.findElement(By.cssSelector("#mainmenua_project > .mainmenuaspan")).click();
+    driver.findElement(By.cssSelector(".project")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Nuova opportunità o progetto")).click();
     driver.findElement(By.name("title")).sendKeys("ProgettoEasy");

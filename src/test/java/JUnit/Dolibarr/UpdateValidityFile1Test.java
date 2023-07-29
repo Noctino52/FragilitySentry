@@ -32,9 +32,9 @@ public class UpdateValidityFile1Test {
   public void updateValidityFile1() {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("admin");
-    driver.findElement(By.id("password")).sendKeys("dolibarr");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("dolibarr");
+    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Strumenti di amministrazione")).click();
     driver.findElement(By.cssSelector(".menu")).click();
@@ -43,12 +43,5 @@ public class UpdateValidityFile1Test {
     driver.findElement(By.linkText("Verifica integrità dei file")).click();
     driver.findElement(By.cssSelector("input:nth-child(7)")).click();
     driver.findElement(By.cssSelector(".button")).click();
-
-
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/span[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td[2]/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/table/tbody/tr[3]/td")).click();
   }
 }

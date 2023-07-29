@@ -32,25 +32,15 @@ public class UpdateTax1Test {
   public void updateTax1() {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("admin");
-    driver.findElement(By.id("password")).sendKeys("dolibarr");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("username")).sendKeys("admin");
+    driver.findElement(By.name("password")).sendKeys("dolibarr");
+    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Impostazioni")).click();
     driver.findElement(By.linkText("Impostazioni -> Società/Organizzazione")).click();
-    driver.findElement(By.id("no_vat")).click();
+    driver.findElement(By.cssSelector("#no_vat")).click();
     driver.findElement(By.xpath("//table[7]/tbody/tr/td[@width]")).click();
     driver.findElement(By.name("save")).click();
 
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/form/table/tbody/tr[2]/td[2]/input")).click();
-    driver.findElement(By.name("MAIN_INFO_SOCIETE_ADDRESS")).click();
-    driver.findElement(By.xpath("//input[@id=\'MAIN_INFO_SOCIETE_ZIP\']")).click();
-    driver.findElement(By.name("MAIN_INFO_SOCIETE_TOWN")).click();
-    driver.findElement(By.xpath("//span[@id=\'select2-state_id-container\']")).click();
-    driver.findElement(By.name("tel")).click();
-    driver.findElement(By.xpath("//input[@id=\'fax\']")).click();
-    driver.findElement(By.name("mail")).click();
-    driver.findElement(By.xpath("//input[@id=\'web\']")).click();
-    driver.findElement(By.name("barcode")).click();
   }
 }

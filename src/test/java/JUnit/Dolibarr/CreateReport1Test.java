@@ -40,9 +40,12 @@ public class CreateReport1Test {
     assertThat(driver.findElement(By.linkText("Reportistiche")).getText(), is("Reportistiche"));
     driver.findElement(By.linkText("Reportistiche")).click();
     driver.findElement(By.cssSelector(".button")).click();
-
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td[3]")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table/tbody/tr/td[2]/div")).click();
+    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/table[2]/tbody/tr/td[3]")).click();
 
   }
 }

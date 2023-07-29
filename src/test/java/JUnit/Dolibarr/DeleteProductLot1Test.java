@@ -39,12 +39,22 @@ public class DeleteProductLot1Test {
     driver.findElement(By.linkText("Impostazioni -> Moduli/Applicazioni")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();
-
-
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td/div")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table[2]/tbody/tr/td/div")).click();
-    driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table[2]/tbody/tr/td")).click();
-    driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
-    driver.findElement(By.xpath("//span[@id=\'select2-search_status-container\']")).click();
+    driver.findElement(By.id("select2-search_status-container")).click();
+    driver.findElement(By.id("search_keyword")).click();
+    {
+      WebElement element = driver.findElement(By.id("modules"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("marketplace"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
+    {
+      WebElement element = driver.findElement(By.id("deploy"));
+      Actions builder = new Actions(driver);
+      builder.moveToElement(element).perform();
+    }
   }
 }

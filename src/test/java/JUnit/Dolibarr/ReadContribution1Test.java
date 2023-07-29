@@ -34,16 +34,9 @@ public class ReadContribution1Test {
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.id("password")).sendKeys("dolibarr");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.id("username")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector("#mainmenua_members > .mainmenuaspan")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Adesioni")).click();
-
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div/table/tbody/tr[3]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div/div/div[2]/table/tbody/tr/th")).click();
   }
 }

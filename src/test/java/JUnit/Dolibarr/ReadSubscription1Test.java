@@ -32,15 +32,10 @@ public class ReadSubscription1Test {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).sendKeys("admin");
-    driver.findElement(By.id("password")).sendKeys("dolibarr");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("password")).sendKeys("dolibarr");
+    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".members")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Without subscription")).click();
-
-    driver.findElement(By.xpath("//span[@id=\'select2-select_categ_search_categ-container\']")).click();
-    driver.findElement(By.name("search_ref")).click();
-    driver.findElement(By.name("search_firstname")).click();
-    driver.findElement(By.name("search_lastname")).click();
   }
 }
