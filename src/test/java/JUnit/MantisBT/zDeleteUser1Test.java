@@ -42,133 +42,16 @@ public class zDeleteUser1Test {
     Thread.sleep(1000);
     driver.findElement(By.linkText("Gestione utenti")).click();
     Thread.sleep(1000);
+    driver.findElement(By.id("search")).click();
+    driver.findElement(By.id("search")).click();
     driver.findElement(By.linkText("Umber93")).click();
+    driver.findElement(By.id("edit-access-level")).click();
+    driver.findElement(By.id("edit-access-level")).click();
+    driver.findElement(By.id("email-field")).click();
+    driver.findElement(By.id("edit-realname")).click();
+    driver.findElement(By.id("edit-username")).click();
+
     driver.findElement(By.cssSelector("#manage-user-delete-form .btn")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
-
-
-    {
-      WebElement element = driver.findElement(By.xpath("(//a[contains(text(),\'administrator\')])[2]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//button[@type=\'submit\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4/span")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4/i")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("(//a[contains(text(),\'A\')])[2]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Gestione progetti\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'sidebar\']/ul/li[6]/a/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'sidebar\']/div/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Nuova anomalia\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Invita utenti\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.cssSelector("#dropdown_projects_menu > .dropdown-toggle"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//input[@name=\'bug_id\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//form[@id=\'manage-user-filter\']/fieldset/input[7]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//input[@id=\'search\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("(//a[contains(text(),\'A\')])[2]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Gestione progetti\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'sidebar\']/ul/li[6]/a/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'sidebar\']/div/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Nuova anomalia\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//a[contains(text(),\'Invita utenti\')]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.cssSelector("#dropdown_projects_menu > .dropdown-toggle"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//input[@name=\'bug_id\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//form[@id=\'manage-user-filter\']/fieldset/input[7]"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.xpath("//input[@id=\'search\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
   }
 }

@@ -42,55 +42,9 @@ public class CreateNote1Test {
     driver.findElement(By.xpath("//div[@id=\'reported\']/div[2]/div/div/table/tbody/tr/td/i[2]")).click();
     driver.findElement(By.linkText("Le fatture sono errate")).click();
     driver.findElement(By.id("bugnote_text")).click();
+    driver.findElement(By.id("bugnote_text")).click();
+    driver.findElement(By.id("bugnote_text")).click();
     driver.findElement(By.id("bugnote_text")).sendKeys("com\'è successo?");
     driver.findElement(By.cssSelector(".widget-toolbox > .btn")).click();
-
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tfoot/tr/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[17]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[16]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[13]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[9]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[7]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[5]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[5]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[6]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tfoot/tr/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[17]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[16]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[13]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[9]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[8]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[7]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[6]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[4]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[5]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[2]/td[5]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[6]")).click();
   }
 }

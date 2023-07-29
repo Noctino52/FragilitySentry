@@ -32,24 +32,18 @@ public class ReadAdminInfo1Test {
   public void readAdminInfo1() {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).sendKeys("Lory");
+    driver.findElement(By.name("username")).click();
+    driver.findElement(By.name("username")).sendKeys("Lory");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.id("password")).sendKeys("root");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("password")).click();
+    driver.findElement(By.name("password")).sendKeys("root");
+    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.linkText("Glitch grafico che prima non si verificava")).click();
     driver.findElement(By.linkText("administrator")).click();
     driver.findElement(By.cssSelector(".padding-8")).click();
     driver.findElement(By.cssSelector("td")).click();
 
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'timeline\']/div[2]/h6")).click();
-    driver.findElement(By.xpath("//div[@id=\'timeline\']/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/ul/li/span")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
     driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
+    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
   }
 }

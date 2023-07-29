@@ -86,6 +86,32 @@ public class CreateProject1Test {
     driver.findElement(By.id("project-status")).click();
     driver.findElement(By.id("project-status")).click();
     driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-description")).click();
+    driver.findElement(By.id("project-view-state")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-status")).click();
+    driver.findElement(By.id("project-name")).click();
+
 
 
 

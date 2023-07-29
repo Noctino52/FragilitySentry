@@ -35,9 +35,9 @@ public class CreateUser1Test {
   public void createUser1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(766, 640));
-    driver.findElement(By.id("username")).sendKeys("administrator");
+    driver.findElement(By.name("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.id("password")).sendKeys("root");
+    driver.findElement(By.name("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
     Thread.sleep(1000);
     driver.findElement(By.id("menu-toggler")).click();
@@ -45,12 +45,12 @@ public class CreateUser1Test {
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestione utenti")).click();
     driver.findElement(By.xpath("//button[@type=\'submit\']")).click();
-    driver.findElement(By.id("user-username")).click();
-    driver.findElement(By.id("user-username")).sendKeys("asda");
-    driver.findElement(By.id("user-realname")).click();
-    driver.findElement(By.id("user-realname")).sendKeys("adsa");
-    driver.findElement(By.id("email-field")).click();
-    driver.findElement(By.id("email-field")).sendKeys("asdasd");
+    driver.findElement(By.name("username")).click();
+    driver.findElement(By.name("username")).sendKeys("asda");
+    driver.findElement(By.name("realname")).click();
+    driver.findElement(By.name("realname")).sendKeys("adsa");
+    driver.findElement(By.name("email")).click();
+    driver.findElement(By.name("email")).sendKeys("asdasd");
     driver.findElement(By.id("user-access-level")).click();
     {
       WebElement dropdown = driver.findElement(By.id("user-access-level"));
@@ -58,27 +58,5 @@ public class CreateUser1Test {
     }
     driver.findElement(By.cssSelector("tr:nth-child(6) .lbl")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
-
-
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[2]/p")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[2]/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("//img[@alt=\'Powered by Mantis Bug Tracker: a free and open source web based bug tracking system.\']"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/ul/li/i")).click();
-    driver.findElement(By.xpath("//button[@id=\'menu-toggler\']")).click();
-    driver.findElement(By.xpath("//button[@id=\'menu-toggler\']")).click();
-    {
-      WebElement element = driver.findElement(By.xpath("//button[@id=\'menu-toggler\']"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
   }
 }

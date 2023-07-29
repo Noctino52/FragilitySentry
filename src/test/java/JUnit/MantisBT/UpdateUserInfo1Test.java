@@ -32,9 +32,11 @@ public class UpdateUserInfo1Test {
   public void updateUserInfo1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(1936, 1050));
-    driver.findElement(By.id("username")).sendKeys("administrator");
+    driver.findElement(By.name("username")).click();
+    driver.findElement(By.name("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.id("password")).sendKeys("root");
+    driver.findElement(By.name("password")).click();
+    driver.findElement(By.name("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("li:nth-child(1) .menu-text")).click();
@@ -42,74 +44,5 @@ public class UpdateUserInfo1Test {
     driver.findElement(By.linkText("Ivan52")).click();
     driver.findElement(By.cssSelector("tr:nth-child(3) > td")).click();
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td")).getText(), is("Ivan Capasso"));
-
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'timeline\']/div/h4")).click();
-    driver.findElement(By.xpath("//div[2]/div[2]/div/div[2]/div/div[2]/div/div")).click();
-    driver.findElement(By.xpath("//h6")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("EasyManager"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("EasyManager"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("EasyManager"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/strong")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[5]/div/div/div/address/small[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'sidebar\']")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar\']")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    driver.findElement(By.linkText("EasyManager")).click();
-    {
-      WebElement element = driver.findElement(By.linkText("EasyManager"));
-      Actions builder = new Actions(driver);
-      builder.doubleClick(element).perform();
-    }
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'navbar-container\']/div[2]/ul/li[3]/a/i")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
   }
 }

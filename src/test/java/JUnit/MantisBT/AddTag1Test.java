@@ -33,26 +33,15 @@ public class AddTag1Test {
   public void addTag1() {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).sendKeys("Chris95");
+    driver.findElement(By.name("username")).sendKeys("Chris95");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.id("password")).sendKeys("root");
+    driver.findElement(By.name("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
     driver.findElement(By.cssSelector(".my-buglist-bug:nth-child(1) .status-50-color")).click();
     driver.findElement(By.linkText("Le fatture sono errate")).click();
-    driver.findElement(By.id("tag_string")).click();
-    driver.findElement(By.id("tag_string")).sendKeys("mysql");
+    driver.findElement(By.name("tag_string")).click();
+    driver.findElement(By.name("tag_string")).sendKeys("mysql");
     driver.findElement(By.cssSelector(".btn:nth-child(7)")).click();
     driver.findElement(By.cssSelector(".bug-tags > .btn:nth-child(2)")).click();
-
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[15]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[14]/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[10]/th")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr[5]/th[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div[2]/div[2]/div/table/tbody/tr/th[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'breadcrumbs\']/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'monitoring\']/div/h4")).click();
   }
 }

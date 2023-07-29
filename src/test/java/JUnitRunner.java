@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class JUnitRunner {
-    static String SoftwareUsed="Magento";
+    static String SoftwareUsed="MantisBT";
 
     public static List<Test> createTestScore(List<Test> testWithSelector){
         double scoreTest=0;

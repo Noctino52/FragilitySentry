@@ -34,8 +34,10 @@ public class CreateTag1Test {
   public void createTag1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(640, 480));
+    driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
+    driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
     Thread.sleep(1000);
@@ -44,7 +46,9 @@ public class CreateTag1Test {
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestisci etichette")).click();
     driver.findElement(By.id("tag-name")).click();
+    driver.findElement(By.id("tag-name")).click();
     driver.findElement(By.id("tag-name")).sendKeys("-sd");
+    driver.findElement(By.id("tag-description")).click();
     driver.findElement(By.id("tag-description")).click();
     driver.findElement(By.id("tag-description")).sendKeys("sadsadsa");
     driver.findElement(By.name("config_set")).click();
@@ -53,22 +57,5 @@ public class CreateTag1Test {
       assert(elements.size() > 0);
     }
 
-
-
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div/h4")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td[2]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[3]")).click();
-    driver.findElement(By.xpath("//div[@id=\'main-container\']/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/thead/tr/td[4]")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr/td")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr/td")).click();
-    driver.findElement(By.xpath("//form[@id=\'manage-tags-create-form\']/div/div[2]/div/div/div/table/tbody/tr[2]/td")).click();
-    driver.findElement(By.name("name")).click();
-    driver.findElement(By.xpath("//textarea[@id=\'tag-description\']")).click();
   }
 }

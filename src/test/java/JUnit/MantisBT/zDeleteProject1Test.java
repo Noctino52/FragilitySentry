@@ -35,23 +35,12 @@ public class zDeleteProject1Test {
   public void zDeleteProject1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).click();
-    driver.findElement(By.id("username")).sendKeys("administrator");
+    driver.findElement(By.name("username")).click();
+    driver.findElement(By.name("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).click();
-    driver.findElement(By.id("password")).sendKeys("root");
-    driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
+    driver.findElement(By.name("password")).click();
+    driver.findElement(By.name("password")).sendKeys("root");
+    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.id("menu-toggler")).click();
     Thread.sleep(1000);
     {
@@ -74,31 +63,25 @@ public class zDeleteProject1Test {
     driver.findElement(By.linkText("EasyManager")).click();
     driver.findElement(By.cssSelector(".btn:nth-child(3)")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
-
-
     {
-      WebElement element = driver.findElement(By.id("menu-toggler"));
+      WebElement element = driver.findElement(By.linkText("Gestione campi personalizzati"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).release().perform();
+      builder.moveToElement(element).perform();
     }
-    driver.findElement(By.id("menu-toggler")).click();
     {
-      WebElement element = driver.findElement(By.id("menu-toggler"));
+      WebElement element = driver.findElement(By.linkText("Gestione profili globali"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).release().perform();
+      builder.moveToElement(element).perform();
     }
-    driver.findElement(By.id("menu-toggler")).click();
     {
-      WebElement element = driver.findElement(By.id("menu-toggler"));
+      WebElement element = driver.findElement(By.linkText("Gestione Plugins"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).release().perform();
+      builder.moveToElement(element).perform();
     }
-    driver.findElement(By.id("menu-toggler")).click();
     {
-      WebElement element = driver.findElement(By.id("menu-toggler"));
+      WebElement element = driver.findElement(By.linkText("Configurazione"));
       Actions builder = new Actions(driver);
-      builder.moveToElement(element).release().perform();
+      builder.moveToElement(element).perform();
     }
-    driver.findElement(By.id("menu-toggler")).click();
   }
 }

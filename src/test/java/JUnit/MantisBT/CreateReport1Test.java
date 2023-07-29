@@ -37,17 +37,20 @@ public class CreateReport1Test {
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("administrator");
     driver.findElement(By.cssSelector(".width-40")).click();
+    driver.findElement(By.id("password")).click();
     driver.findElement(By.id("password")).sendKeys("root");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".fa-gears")).click();
     driver.findElement(By.linkText("Gestione progetti")).click();
     driver.findElement(By.cssSelector(".widget-toolbox > .form-inline .btn")).click();
     driver.findElement(By.id("project-name")).click();
+    driver.findElement(By.id("project-name")).click();
     driver.findElement(By.id("project-name")).sendKeys("Prova");
     driver.findElement(By.cssSelector(".btn-white")).click();
     driver.findElement(By.linkText("Continua")).click();
     driver.findElement(By.cssSelector(".user-info")).click();
     driver.findElement(By.linkText("Esci")).click();
+    driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).click();
     driver.findElement(By.id("username")).sendKeys("Chris95");
     driver.findElement(By.cssSelector(".width-40")).click();
@@ -91,9 +94,12 @@ public class CreateReport1Test {
       dropdown.findElement(By.xpath("//option[. = 'Chris95']")).click();
     }
     driver.findElement(By.id("summary")).click();
+    driver.findElement(By.id("summary")).click();
     driver.findElement(By.cssSelector("tr:nth-child(7)")).click();
     driver.findElement(By.id("summary")).click();
+    driver.findElement(By.id("summary")).click();
     driver.findElement(By.id("summary")).sendKeys("Quando chiedi la stampa dei fogli excel crasha");
+    driver.findElement(By.id("description")).click();
     driver.findElement(By.id("description")).click();
     driver.findElement(By.id("description")).sendKeys("Quando chiedi la stampa dei fogl excel crasha");
     driver.findElement(By.cssSelector(".btn-white")).click();
