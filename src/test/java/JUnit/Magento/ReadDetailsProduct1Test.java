@@ -48,6 +48,7 @@ public class ReadDetailsProduct1Test {
     js.executeScript("arguments[0].scrollLeft += 3000;", tableWrapper);
     Thread.sleep(1000);
 // Verifica se l'elemento si è spostato
+    //Assert:COMPARAZIONE FALLITA
     long finalScrollLeft = (long) js.executeScript("return arguments[0].scrollLeft;", tableWrapper);
     if (finalScrollLeft <= initialScrollLeft){
       fail("Lo scroll orizzontale non è stato eseguito correttamente.");

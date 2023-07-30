@@ -43,6 +43,7 @@ public class UpdateUserInfo1Test {
     driver.findElement(By.cssSelector("#resolved .my-buglist-bug:nth-child(1) span > a")).click();
     driver.findElement(By.linkText("Ivan52")).click();
     driver.findElement(By.cssSelector("tr:nth-child(3) > td")).click();
+    //Assert Element fallita
     assertThat(driver.findElement(By.cssSelector("tr:nth-child(3) > td")).getText(), is("Ivan Capasso"));
   }
 }

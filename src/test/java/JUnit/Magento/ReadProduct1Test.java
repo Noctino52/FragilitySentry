@@ -34,6 +34,7 @@ public class ReadProduct1Test {
     driver.get("http://localhost/");
     driver.manage().window().setSize(new Dimension(945, 1020));
     Thread.sleep(3000);
+    //XPath troppo specifico
     driver.findElement(By.xpath("//div[contains(@class, \'nav-sections-items\') and not(contains(@class, \'mage-tabs-disabled\'))]")).click();
     driver.findElement(By.cssSelector(".nav:nth-child(5) > a")).click();
     driver.findElement(By.id("name")).click();

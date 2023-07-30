@@ -36,6 +36,7 @@ public class DeleteProductLot1Test {
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Impostazioni")).click();
+    //Cambio classi selettore CSS
     driver.findElement(By.linkText("Impostazioni -> Moduli/Applicazioni")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();
     driver.findElement(By.cssSelector(".box-flex-container:nth-child(17) > .box-flex-item:nth-child(4) .reposition > .fas")).click();

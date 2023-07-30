@@ -47,6 +47,7 @@ public class ReadTemplate1Test {
     driver.findElement(By.xpath("(//button[@type=\'button\'])[7]")).click();
     Thread.sleep(1000);
     {
+      //XPath troppo specifico
       WebElement dropdown = driver.findElement(By.xpath("//select[contains(@class, \'ui-datepicker-month\') and not(@aria-label)]"));
       dropdown.findElement(By.cssSelector("*[value='1']")).click();
     }

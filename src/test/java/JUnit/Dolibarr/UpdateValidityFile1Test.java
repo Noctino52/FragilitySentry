@@ -41,6 +41,7 @@ public class UpdateValidityFile1Test {
     driver.findElement(By.linkText("Informazioni su Dolibarr")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Verifica integrità dei file")).click();
+    //Identificazione di un selettore da name a id
     driver.findElement(By.cssSelector("input:nth-child(7)")).click();
     driver.findElement(By.cssSelector(".button")).click();
   }

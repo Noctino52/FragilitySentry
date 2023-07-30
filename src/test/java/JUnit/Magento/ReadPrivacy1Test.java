@@ -66,6 +66,7 @@ public class ReadPrivacy1Test {
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".page-footer")).click();
     vars.put("window_handles", driver.getWindowHandles());
+    //Cambio del link in <a href>
     driver.findElement(By.xpath("//a[contains(@href, \'https://magento.com/sites/default/files/REVISED-MAGENTO-PRIVACY-POLICY.pdf\')]")).click();
     vars.put("win5173", waitForWindow(2000));
   }

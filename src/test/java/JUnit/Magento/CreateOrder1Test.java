@@ -46,6 +46,7 @@ public class CreateOrder1Test {
     Thread.sleep(1000);
     js.executeScript("window.scrollBy(0,600)", "");
     Thread.sleep(2000);
+    //Selettore XPath Troppo specifico
     driver.findElement(By.xpath("//label[contains(.,\'Save in address book\')]")).click();
     Thread.sleep(2000);
     js.executeScript("window.scrollBy(0,600)", "");

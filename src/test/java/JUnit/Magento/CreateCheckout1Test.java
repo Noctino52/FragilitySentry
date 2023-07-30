@@ -36,6 +36,7 @@ public class CreateCheckout1Test {
     driver.get("http://localhost/");
     driver.manage().window().setSize(new Dimension(945,1020));
     Thread.sleep(1000);
+    // un . class è cambiato nel <div>
     driver.findElement(By.cssSelector(".ui-menu.ui-widget.ui-widget-content.ui-corner-all")).click();
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("#ui-id-3 > span")).click();

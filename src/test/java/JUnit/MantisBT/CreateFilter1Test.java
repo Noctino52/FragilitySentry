@@ -44,6 +44,7 @@ public class CreateFilter1Test {
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("li:nth-child(2) .menu-text")).click();
     {
+      //Cambio posizione di un selettore button
       WebElement element = driver.findElement(By.cssSelector(".widget-main:nth-child(1) > .table-responsive"));
       Actions builder = new Actions(driver);
       builder.moveToElement(element).clickAndHold().perform();

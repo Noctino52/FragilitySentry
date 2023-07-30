@@ -53,6 +53,7 @@ public class ReadView1Test {
     Thread.sleep(2000);
     driver.findElement(By.xpath("//fieldset/*[position() = 5]/div/select")).click();
     {
+      //XPath troppo generico (Seleziona più elementi)
       WebElement dropdown = driver.findElement(By.name("store_id"));
       dropdown.findElement(By.xpath("//option[. = '            Default Store View']")).click();
     }

@@ -52,6 +52,7 @@ public class aStopFilter1Test {
       dropdown.findElement(By.xpath("//option[. = 'maggiore']")).click();
     }
     driver.findElement(By.cssSelector(".no-float")).click();
+    //Cambio posizione di un button
     driver.findElement(By.name("reset_query_button")).click();
   }
 }

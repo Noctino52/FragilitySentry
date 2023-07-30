@@ -61,6 +61,7 @@ public class zDeleteProject1Test {
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestione progetti")).click();
     driver.findElement(By.linkText("EasyManager")).click();
+    //Selettore CSS troppo generico (Seleziona più elementi)
     driver.findElement(By.cssSelector(".btn:nth-child(3)")).click();
     driver.findElement(By.cssSelector(".btn-white")).click();
     {

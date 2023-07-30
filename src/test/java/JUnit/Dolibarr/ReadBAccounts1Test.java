@@ -36,6 +36,7 @@ public class ReadBAccounts1Test {
     driver.findElement(By.id("password")).sendKeys("dolibarr");
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector("#mainmenua_bank > .mainmenuaspan")).click();
+    //Assert testuale fallita
     assertThat(driver.findElement(By.cssSelector(".divsearchfield")).getText(), is("Tag/categorie:"));
     driver.findElement(By.cssSelector(".select2-selection--multiple > .select2-selection__rendered")).click();
 

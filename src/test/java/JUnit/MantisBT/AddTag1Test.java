@@ -37,6 +37,7 @@ public class AddTag1Test {
     driver.findElement(By.cssSelector(".width-40")).click();
     driver.findElement(By.name("password")).sendKeys("root");
     driver.findElement(By.cssSelector(".width-40")).click();
+    //Selettore CSS troppo specifico
     driver.findElement(By.cssSelector(".my-buglist-bug:nth-child(1) .status-50-color")).click();
     driver.findElement(By.linkText("Le fatture sono errate")).click();
     driver.findElement(By.name("tag_string")).click();

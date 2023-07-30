@@ -36,6 +36,7 @@ public class CreateReturn1Test {
     driver.get("http://localhost/");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.cssSelector(".nav:nth-child(3) > a")).click();
+    //Cambio posizione di un button (Toggle Down)
     driver.findElement(By.name("oar_order_id")).click();
     driver.findElement(By.name("oar_order_id")).sendKeys("1");
     driver.findElement(By.name("oar_billing_lastname")).click();

@@ -32,6 +32,7 @@ public class CreateCompany1Test {
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Impostazioni")).click();
+    //Elemento <li> diventa un'icona
     driver.findElement(By.cssSelector(".fiche > .inline-block:nth-child(4)")).click();
     driver.findElement(By.linkText("Impostazioni -> Società/Organizzazione")).click();
     driver.findElement(By.name("nom")).sendKeys("EasyCompany");

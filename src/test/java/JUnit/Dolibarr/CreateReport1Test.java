@@ -37,6 +37,7 @@ public class CreateReport1Test {
     driver.findElement(By.id("password")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".billing")).click();
     driver.findElement(By.cssSelector(".menu")).click();
+    //Assert testuale fallita
     assertThat(driver.findElement(By.linkText("Reportistiche")).getText(), is("Reportistiche"));
     driver.findElement(By.linkText("Reportistiche")).click();
     driver.findElement(By.cssSelector(".button")).click();

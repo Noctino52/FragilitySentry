@@ -42,6 +42,7 @@ public class CreateTicket1Test {
     driver.findElement(By.id("message")).sendKeys("Ho una domanda");
     driver.findElement(By.name("add")).click();
     driver.findElement(By.cssSelector(".center:nth-child(3) > .butAction")).click();
+    //Eliminazione del bottone
     driver.findElement(By.cssSelector(".ui-button:nth-child(1)")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[7]/td/table/tbody/tr/td")).click();
     driver.findElement(By.xpath("//div[@id=\'id-right\']/div/div[2]/div[3]/div/table/tbody/tr[3]/td")).click();

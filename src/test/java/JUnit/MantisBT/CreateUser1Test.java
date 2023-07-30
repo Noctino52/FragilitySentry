@@ -44,6 +44,7 @@ public class CreateUser1Test {
     Thread.sleep(1000);
     driver.findElement(By.cssSelector("li:nth-child(7) .menu-text")).click();
     driver.findElement(By.linkText("Gestione utenti")).click();
+    //Selettore XPath Troppo specifico
     driver.findElement(By.xpath("//button[@type=\'submit\']")).click();
     driver.findElement(By.name("username")).click();
     driver.findElement(By.name("username")).sendKeys("asda");

@@ -35,6 +35,7 @@ public class ReadContribution1Test {
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.id("password")).sendKeys("dolibarr");
     driver.findElement(By.id("username")).sendKeys(Keys.ENTER);
+    //Cambio attributi/classi di questo selettore
     driver.findElement(By.cssSelector("#mainmenua_members > .mainmenuaspan")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Adesioni")).click();

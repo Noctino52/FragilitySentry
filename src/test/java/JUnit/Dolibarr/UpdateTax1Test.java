@@ -39,6 +39,7 @@ public class UpdateTax1Test {
     driver.findElement(By.linkText("Impostazioni")).click();
     driver.findElement(By.linkText("Impostazioni -> Società/Organizzazione")).click();
     driver.findElement(By.cssSelector("#no_vat")).click();
+    //Selettore troppo specifico (Non trova niente)
     driver.findElement(By.xpath("//table[7]/tbody/tr/td[@width]")).click();
     driver.findElement(By.name("save")).click();
 

@@ -53,6 +53,7 @@ public class CreateTag1Test {
     driver.findElement(By.id("tag-description")).sendKeys("sadsadsa");
     driver.findElement(By.name("config_set")).click();
     {
+      //Assert Element Fallita
       List<WebElement> elements = driver.findElements(By.cssSelector(".widget-box:nth-child(1) .widget-title"));
       assert(elements.size() > 0);
     }

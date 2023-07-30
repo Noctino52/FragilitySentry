@@ -60,6 +60,7 @@ public class ReadExtension1Test {
     js.executeScript("window.scrollBy(0,200)", "");
     Thread.sleep(2000);
     driver.findElement(By.cssSelector(".magento-version")).click();
+    //Assert testuale fallita
     assertThat(driver.findElement(By.cssSelector(".magento-version")).getText(), is("Magento ver. 2.4.2"));
     vars.put("window_handles", driver.getWindowHandles());
     driver.findElement(By.linkText("Visit Magento Marketplaces")).click();

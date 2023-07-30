@@ -44,6 +44,7 @@ public class DeleteHoliday1Test {
     driver.findElement(By.id("search_keyword")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".fa-toggle-on")).click();
     driver.findElement(By.cssSelector(".reposition > .fas")).click();
+    //Eliminazione di un bottone
     driver.findElement(By.name("buttonreset")).click();
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/table/tbody/tr/td/div")).click();
     driver.findElement(By.xpath("//form[@id=\'searchFormList\']/div[2]/div/div[2]/span")).click();

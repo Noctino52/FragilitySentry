@@ -34,6 +34,7 @@ public class ReadSubscription1Test {
     driver.findElement(By.id("username")).sendKeys("admin");
     driver.findElement(By.name("password")).sendKeys("dolibarr");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+    //Cambio attributi del selettore CSS
     driver.findElement(By.cssSelector(".members")).click();
     driver.findElement(By.cssSelector(".menu")).click();
     driver.findElement(By.linkText("Without subscription")).click();
