@@ -3,7 +3,7 @@ url,http://localhost:8080/,6.00,9.00,6.60
 Id,username,10.00,9.00,9.80
 Id,password,10.00,9.00,9.80
 Id,password,10.00,9.00,9.80
-CssSelector,.menu,8.00,4.00,7.20
+CssSelector,.menu,8.00,9.00,8.20
 LinkText,admin,4.00,4.00,4.00
 LinkText,Scheda,4.00,4.00,4.00
 XPath,//a[contains(text(),'Modifica')],6.00,7.00,6.20

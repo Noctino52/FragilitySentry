@@ -1,6 +1,8 @@
 import org.jsoup.nodes.Document;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +13,42 @@ public class Test {
     private List<Selector> selectors;
     private List<Page> page;
     private double testScore;
+    private boolean laterGetSuccess;
 
     public Test(String className) {
         this.className=className;
         this.testScore =0;
+        this.laterGetSuccess=getStatusResult(this.getPureTestName(),5);
+        //System.out.println("laterGetSuccess: "+laterGetSuccess+"\n");
     }
 
+    private boolean getStatusResult(String testName, int column) {
+        /*
+        Questo metodo prende il file Result.csv dell'applicativo che si sta utilizzando e restituisce lo status del test preso in input per le versioni successive
+         */
+            boolean status = false;
+            String directory="src/test/java/XMLResult/"+ JUnitRunner.SoftwareUsed+"/Result.csv";
+
+            try (BufferedReader br = new BufferedReader(new FileReader(directory))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] values = line.split(",");
+                    String currentTestName = values[0]; // Nome del test nella prima colonna
+                    //System.out.println("Compare: "+currentTestName+" to "+ TestRunner.decapitalize(testName)+"\n");
+
+                    if (currentTestName.equals(TestRunner.decapitalize(testName))) {
+                        // Converte il valore nella colonna specificata in un valore booleano
+                        String statusString=values[column];
+                        if(statusString.equals("passed"))status=true;
+                        break;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return status;
+    }
     public static List<Test> getAllTests(String directory) throws IOException {
         List<Test> listOfTests=new ArrayList<>();
         List<String> fileNames=getFileNames(directory);
@@ -64,6 +96,20 @@ public class Test {
             return className;
         }
     }
+    public String getPureTestName() {
+        int lastIndex = className.lastIndexOf("/");
+        int endIndex = className.lastIndexOf("Test.java");
+
+        if (lastIndex >= 0 && lastIndex < className.length() - 1) {
+            if (endIndex > lastIndex) {
+                return className.substring(lastIndex + 1, endIndex);
+            } else {
+                return className.substring(lastIndex + 1);
+            }
+        } else {
+            return className;
+        }
+    }
     public double getTestScore() {
         return testScore;
     }
@@ -84,5 +130,17 @@ public class Test {
 
     public void setPage(List<Page> page) {
         this.page = page;
+    }
+    public boolean isLaterGetSuccess() {
+        return laterGetSuccess;
+    }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "className='" + className + '\'' +
+                ", testScore=" + testScore +
+                ", laterGetSuccess=" + laterGetSuccess +
+                '}';
     }
 }

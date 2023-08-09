@@ -1,16 +1,16 @@
 Nome del test,Dolibarr13,Dolibarr14.0,Dolibarr14.2,Dolibarr14.5,Dolibarr15,MetricV1,MetricV2,MetricV3
 createCompany1,passed,error,error,error,error,4.36,3.65,2.92
-createProject1,passed,passed,passed,passed,passed,9.11,8.84,8.18
+createProject1,passed,passed,passed,passed,passed,9.11,8.84,8.15
 createReport1,passed,passed,passed,passed,error,5.95,5.89,5.45
 createTicket1,passed,passed,error,error,error,5.23,4.16,3.08
 deleteBackup1,passed,passed,passed,passed,passed,8.55,8.47,7.67
 deleteHoliday1,passed,passed,passed,passed,error,5.82,5.94,4.89
 deleteProductLot1,passed,passed,passed,passed,error,5.43,5.64,2.82
-readAgenda1,passed,passed,passed,passed,passed,8.89,8.38,7.38
+readAgenda1,passed,passed,passed,passed,passed,8.89,8.38,7.28
 readBAccounts1,passed,failed,failed,failed,failed,4.18,3.28,2.71
 readContribution1,passed,passed,passed,error,error,5.38,5.40,3.43
 readSubscription1,passed,passed,passed,error,error,5.24,5.39,5.17
 updateStyle1,passed,passed,passed,passed,passed,8.25,8.34,7.70
 updateTax1,passed,passed,error,error,error,4.53,4.75,4.34
-updateUser1,passed,passed,passed,passed,passed,8.42,8.36,6.70
+updateUser1,passed,passed,passed,passed,passed,8.42,8.36,6.72
 updateValidityFile1,passed,passed,passed,error,error,5.39,5.17,4.67

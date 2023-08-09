@@ -131,7 +131,7 @@ public class TestRunner {
         }
     }
 
-    private static String decapitalize(String string) {
+    public static String decapitalize(String string) {
         if (string == null || string.length() == 0) {
             return string;
         }
