@@ -8,18 +8,22 @@ public class SelectorWebDriver implements WebDriverListener {
 
 
 	private List<Selector> selectorPages;
-	private List<Document> documentPages;
+	private List<Page> documentPages;
 
 	@Override
 	public void beforeGet(WebDriver driver, String url) {
 		String pageString=driver.getPageSource();
 		Document pageDocument= Jsoup.parse(pageString);
-		documentPages.add(pageDocument);
 
-		Selector selectorUrl=new Selector(url,"url");
+		Selector selector=new Selector(url,"url");
 		Page page=new Page(pageDocument);
+
 		page.setPageComplexity(PageComplexityEvaluator.calculatePageComplexity(page));
-		selectorUrl.setSelectorFinalScore(Judge.getElementScore(selectorUrl,page));
+		selector.setSelectorFinalScore(Judge.getElementScore(selector,page));
+		System.out.println(selector+"   "+page);
+
+		selectorPages.add(selector);
+		documentPages.add(page);
 
 		WebDriverListener.super.beforeGet(driver, url);
 	}
@@ -28,14 +32,16 @@ public class SelectorWebDriver implements WebDriverListener {
 	public void beforeFindElement(WebDriver driver, By locator) {
 		String pageString=driver.getPageSource();
 		Document pageDocument= Jsoup.parse(pageString);
-		documentPages.add(pageDocument);
 
 		Selector selector=new Selector(locator);
 		Page page=new Page(pageDocument);
+
 		page.setPageComplexity(PageComplexityEvaluator.calculatePageComplexity(page));
 		selector.setSelectorFinalScore(Judge.getElementScore(selector,page));
 		System.out.println(selector+"   "+page);
+
 		selectorPages.add(selector);
+		documentPages.add(page);
 	}
 
 	@Override
@@ -50,10 +56,10 @@ public class SelectorWebDriver implements WebDriverListener {
 		return selectorPages;
 	}
 
-	public List<Document> getDocumentPages() {
+	public List<Page> getDocumentPages() {
 		return documentPages;
 	}
-	public void setDocumentPages(List<Document> documentPages) {
+	public void setDocumentPages(List<Page> documentPages) {
 		this.documentPages = documentPages;
 	}
 

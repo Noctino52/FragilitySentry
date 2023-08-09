@@ -1,0 +1,15 @@
+Tipo,Selettore,Punteggio Selettore, Punteggio pagina, Punteggio finale 
+url,http://localhost:8080/,6.00,9.00,6.60
+Id,username,10.00,9.00,9.80
+Id,password,10.00,9.00,9.80
+Id,password,10.00,9.00,9.80
+CssSelector,.agenda,7.00,4.00,6.40
+CssSelector,.fa-calendar-week,3.00,5.00,3.40
+CssSelector,.fa-calendar-day,4.00,6.00,4.40
+Id,select2-search_projectid-container,10.00,6.00,9.20
+Id,selectsearch_status,10.00,6.00,9.20
+Id,select2-search_socid-container,10.00,6.00,9.20
+Id,select2-search_filtert-container,10.00,6.00,9.20
+Id,select2-search_actioncode-container,10.00,6.00,9.20
+Id,check_birthday,10.00,6.00,9.20
+Id,check_birthday,10.00,6.00,9.20

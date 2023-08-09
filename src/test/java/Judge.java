@@ -42,7 +42,7 @@ public class Judge {
         String selectorString=selector.getSelector();
 
         // Calcola punteggio di complessità della pagina
-        float complexityPageScore = documentPage.getPageScore();
+        float complexityPageScore = documentPage.getPageComplexity();
 
         switch (type){
             case "url":

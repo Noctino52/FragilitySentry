@@ -6,7 +6,13 @@ import java.util.List;
 import java.util.Locale;
 
 public class JUnitRunner {
-    static String SoftwareUsed="Magento";
+    //TODO: Phormer Tests
+    //TODO: Per ogni test, deve esserci una valutazione dei selettore (CSV)
+    //TODO: Coefficiente di correlazione
+    //TODO: Unire il calcolo complessitrà di CSS e XPath
+    //TODO: Implementare una metrica che tiene conto della pagina  e del selettore insieme
+
+    static String SoftwareUsed="Dolibarr";
 
     public static List<Test> createTestScore(List<Test> testWithSelector){
         double scoreTest=0;
@@ -30,6 +36,7 @@ public class JUnitRunner {
                     " Punteggio:"+df.format(testJudged.getTestScore()));
         }
         String directory="src/test/java/XMLResult/"+SoftwareUsed+"/Result.csv";
+        createSelectorScoreFiles(testsJudged,df);
         writeInResult(testsJudged,directory,"MetricV3",df);
     }
     public static void writeInResult(List<Test> testsJudge, String csvFileName, String columnName,DecimalFormat df) {
@@ -91,6 +98,42 @@ public class JUnitRunner {
             e.printStackTrace();
         }
     }
+
+    public static void createSelectorScoreFiles(List<Test> testsJudged, DecimalFormat df) {
+        String basePath = "src/test/java/XMLResult/"+SoftwareUsed+"/Scores/";
+        File directory = new File(basePath);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        for (Test test : testsJudged) {
+            String fileName = basePath + test.getTestName() + "_scores.csv";
+
+            try (FileWriter fileWriter = new FileWriter(fileName)) {
+                String index = "Tipo,Selettore,Punteggio Selettore, Punteggio pagina, Punteggio finale \n";
+
+                fileWriter.write(index);
+                for (int i = 0; i < test.getSelectors().size(); i++) {
+                    Selector selector = test.getSelectors().get(i);
+                    Page page = test.getPage().get(i);
+
+                    String nameSelector=selector.getSelector();
+                    String typeSelector=selector.getType();
+                    float selectorScore=selector.getSelectorScore();
+                    float pageScore=page.getPageScore();
+                    float selectorFinalScore=selector.getSelectorFinalScore();
+
+                    String line = typeSelector+","+nameSelector + ","+ df.format(selectorScore) +
+                            "," + df.format(pageScore) + ","+df.format(selectorFinalScore)+"\n";
+
+                    fileWriter.write(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
 
     public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, IllegalAccessException, InstantiationException, IOException {

@@ -38,7 +38,7 @@ public class TestRunner {
 
     private Test executeTest(int testNum) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         List<Selector> selectorFinished;
-        List<Document> documentFinished;
+        List<Page> pageFinished;
         Test test;
         String nomeTest;
         String nomeMetodo;
@@ -83,8 +83,8 @@ public class TestRunner {
         System.out.println("\n Test N."+testNum+" Concluso \n");
         selectorFinished = listener.getSelectorPages();
         test.setSelectors(selectorFinished);
-        documentFinished=listener.getDocumentPages();
-        test.setDocuments(documentFinished);
+        pageFinished=listener.getDocumentPages();
+        test.setPage(pageFinished);
         return test;
     }
 

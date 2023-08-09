@@ -9,7 +9,7 @@ public class Test {
 
     private final String className;
     private List<Selector> selectors;
-    private List<Document> documents;
+    private List<Page> page;
     private double testScore;
 
     public Test(String className) {
@@ -27,7 +27,7 @@ public class Test {
         return listOfTests;
     }
 
-    private static List<String> getFileNames(String directoryPath) throws IOException {
+    public static List<String> getFileNames(String directoryPath) throws IOException {
         List<String> fileNames = new ArrayList<>();
         File directory = new File(directoryPath);
         if (directory.exists() && directory.isDirectory()) {
@@ -50,6 +50,20 @@ public class Test {
     public String getClassName() {
         return className;
     }
+    public String getTestName() {
+        int lastIndex = className.lastIndexOf("/");
+        int endIndex = className.lastIndexOf(".java");
+
+        if (lastIndex >= 0 && lastIndex < className.length() - 1) {
+            if (endIndex > lastIndex) {
+                return className.substring(lastIndex + 1, endIndex);
+            } else {
+                return className.substring(lastIndex + 1);
+            }
+        } else {
+            return className;
+        }
+    }
     public double getTestScore() {
         return testScore;
     }
@@ -63,10 +77,12 @@ public class Test {
     public void setSelectors(List<Selector> selectors) {
         this.selectors = selectors;
     }
-    public List<Document> getDocuments() {
-        return documents;
+
+    public List<Page> getPage() {
+        return page;
     }
-    public void setDocuments(List<Document> documents) {
-        this.documents = documents;
+
+    public void setPage(List<Page> page) {
+        this.page = page;
     }
 }
