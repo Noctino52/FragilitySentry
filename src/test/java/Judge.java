@@ -7,13 +7,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
+import javax.xml.xpath.*;
 
+import java.io.IOException;
 import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,6 +37,8 @@ public class Judge {
     private static float doMetricV3(Selector selector, Page documentPage) {
         Document document=documentPage.getPage();
         float elementScore=-1;
+        float numberOfElements = 1;
+        float numElementsWeight=1;
         float complexitySelectorScore=-1;
         //Calcola punteggio:
         //Vedere diagramma di flusso
@@ -53,17 +57,16 @@ public class Judge {
                 complexitySelectorScore=SelectorComplexityEvaluator.evaluateIdSelectorComplexity(selectorString);;
                 break;
             case "CssSelector":
-                complexitySelectorScore=SelectorComplexityEvaluator.evaluateCssSelectorComplexity(selectorString);
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateCssSelectorComplexity(selectorString,document);
 
                 break;
             case "XPath":
-                complexitySelectorScore=SelectorComplexityEvaluator.evaluateXPathSelectorComplexity(selectorString);
+                complexitySelectorScore=SelectorComplexityEvaluator.evaluateXPathSelectorComplexity(selectorString,document);
                 if(!isXPathAbsolute(selector.getSelector()))elementScore-=1;
 
                 break;
             case "TagName":
                 complexitySelectorScore=SelectorComplexityEvaluator.evaluateTagNameSelectorComplexity(selectorString);
-                if(!isTagMultiple(selector,document))complexitySelectorScore-=1;
                 break;
             case "LinkText":
                 complexitySelectorScore=SelectorComplexityEvaluator.evaluateLinkTextSelectorComplexity(selectorString);
@@ -80,15 +83,53 @@ public class Judge {
         documentPage.setPageScore(pageScore);
         selector.setSelectorScore(elementScore);
 
+        //SELETTORE + PAGINA
+        //Se nella pagina il locatore individua più elementi, ammeno che non è di tipo tag, allora devo ridurre il punteggio finale.
+        if(!type.equals("url") && !type.equals("LinkText") && !type.equals("id")) numberOfElements=countOccurence(selector,documentPage);
+        if(numberOfElements>1 && !type.equals("tag"))numElementsWeight=1.8f/numElementsWeight;
+        System.out.println("NumberOfElements:"+numberOfElements+" numElementsWeight "+numElementsWeight);
+
         // Ponderazione per combinare i punteggi del selettore e di complessità
         float selectorWeight = 0.8f; // Peso del punteggio del selettore (puoi regolare il valore)
         float PageWeight = 0.2f; // Peso del punteggio di complessità (puoi regolare il valore)
-
         // Combina i punteggi ponderati del selettore e di complessità per ottenere il punteggio finale
-        float totalScore = (selectorWeight * elementScore) + (PageWeight * pageScore);
+        float totalScore = ((selectorWeight * elementScore) + (PageWeight * pageScore))* numElementsWeight;
 
 
         return totalScore;
+    }
+
+    private static float countOccurence(Selector selector, Page documentPage) {
+        if (!selector.getType().equals("XPath")) return documentPage.getPage().select(selector.getSelector()).size();
+        else return countElementsByXPath(selector.getSelector(),documentPage.getPage());
+    }
+
+    public static int countElementsByXPath(String xPathSelector, Document page) {
+        org.w3c.dom.Document doc = null;
+        TagNode tagNode = new HtmlCleaner().clean(page.toString());
+        try {
+            doc = new DomSerializer(new CleanerProperties()).createDOM(tagNode);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true); // never forget this!
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+        //Create XPath
+        XPathFactory xpathfactory = XPathFactory.newInstance();
+        XPath xpath = xpathfactory.newXPath();
+
+        XPathExpression expr = xpath.compile(xPathSelector);
+        Object result = expr.evaluate(doc, XPathConstants.NODESET);
+        NodeList nodes = (NodeList) result;
+        return nodes.getLength();
+        } catch (ParserConfigurationException | XPathExpressionException e) {
+            e.printStackTrace();
+        }
+        return 1;
     }
 
     private static float doMetricV2(Selector selector, Document document) {

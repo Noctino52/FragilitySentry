@@ -29,7 +29,7 @@ public class zDeleteUser1Test {
     driver.quit();
   }
   @Test
-  public void zDeleteUser1() throws InterruptedException {
+  public void zdeleteUser1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(1950, 1050));
     driver.findElement(By.id("username")).click();

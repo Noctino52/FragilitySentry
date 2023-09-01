@@ -32,7 +32,7 @@ public class zDeleteReport1Test {
     driver.quit();
   }
   @Test
-  public void zDeleteReport1() {
+  public void zdeleteReport1() {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.id("username")).click();

@@ -32,7 +32,7 @@ public class zDeleteNote1Test {
     driver.quit();
   }
   @Test
-  public void zDeleteNote1() throws InterruptedException {
+  public void zdeleteNote1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
     {

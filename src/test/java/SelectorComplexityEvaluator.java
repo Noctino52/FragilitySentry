@@ -1,3 +1,9 @@
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class SelectorComplexityEvaluator {
 
     // Metodo per valutare la complessità di un selettore Id
@@ -15,71 +21,79 @@ public class SelectorComplexityEvaluator {
     }
 
     // Metodo per valutare la complessità di un selettore CSS
-    public static int evaluateCssSelectorComplexity(String cssSelector) {
+    public static float evaluateCssSelectorComplexity(String cssSelector, Document document) {
         // Valuta la complessità del selettore CSS in base alla sua struttura e alla complessità della pagina
-        int selectorScore = countCssSelectorComplexity(cssSelector);
+        float selectorScore = countCssSelectorComplexity(cssSelector,document);
 
         // Normalizza il punteggio del selettore nell'intervallo 1-10 in base al punteggio complessivo della pagina
-        int normalizedScore = normalizeScore(selectorScore);
+        //int normalizedScore = normalizeScore(selectorScore);
 
-        return normalizedScore;
+        if(selectorScore>10)selectorScore=10;
+        return selectorScore;
     }
 
     // Metodo per valutare la complessità di un selettore XPath
-    public static int evaluateXPathSelectorComplexity(String xpathSelector) {
+    public static float evaluateXPathSelectorComplexity(String xpathSelector, Document document) {
         // Valuta la complessità del selettore XPath in base alla sua struttura e alla complessità della pagina
-        int selectorScore = countXPathSelectorComplexity(xpathSelector);
+        float selectorScore = countXPathSelectorComplexity(xpathSelector,document);
 
         // Normalizza il punteggio del selettore nell'intervallo 1-10 in base al punteggio complessivo della pagina
-        int normalizedScore = normalizeScore(selectorScore);
+        //int normalizedScore = normalizeScore(selectorScore);
 
-        return normalizedScore;
+        if(selectorScore>10)selectorScore=10;
+        return selectorScore;
     }
 
-    private static int countCssSelectorComplexity(String cssSelector) {
+    private static float countCssSelectorComplexity(String cssSelector, Document document) {
         // Calcola la complessità del selettore CSS in base alla sua struttura
+        Elements elements = document.select(cssSelector);
 
         // Esempio di valutazione: consideriamo la lunghezza del selettore e il numero di ID e classi
-        int lengthScore = cssSelector.length();
-        int idCount = countSelectorSpecificity(cssSelector, "#");
-        int classCount = countSelectorSpecificity(cssSelector, ".");
+        //int lengthScore = cssSelector.length();
+        int classCount = countSelectorSpecificity(cssSelector, "\\.");
+        int attributeCount = countSelectorSpecificity(cssSelector, "\\[");
+        int idCount = countSelectorSpecificity(cssSelector, "\\#");
+        int childCount=countSelectorSpecificity(cssSelector,"child\\(\\d+| >");
+        int functionCount=countSelectorSpecificity(cssSelector,":|::");
+        int nodeCount = elements.size();
+
+        System.out.println("CSS: attributeCount: "+attributeCount+" node count: "+nodeCount+" classCount: "+classCount+
+                " idCount: "+idCount+"childCount: "+childCount+" functionCOunt: "+functionCount+"\n");
 
         // Assegna un punteggio in base alla lunghezza e alla specificità del selettore
-        int complexityScore = lengthScore*4 + idCount * 4 + classCount*2;
+        float complexityScore = (classCount*1.4f)+(attributeCount*1.4f)+(idCount*0.3f)+(childCount*1.4f)+(nodeCount*0.7f)+(functionCount*1.2f);
 
         return complexityScore;
     }
 
 
 
-    private static int countXPathSelectorComplexity(String xpathSelector) {
+    private static float countXPathSelectorComplexity(String xpathSelector, Document document) {
         // Calcola la complessità del selettore XPath in base alla sua struttura
 
         // Esempio di valutazione: consideriamo la lunghezza del selettore e il numero di attributi e nodi
-        int lengthScore = xpathSelector.length();
-        int attributeCount = countSelectorSpecificity(xpathSelector, "@");;
-        int nodeCount = countSelectorSpecificity(xpathSelector, "/");
+        //int lengthScore = xpathSelector.length();
+        int classCount = countSelectorSpecificity(xpathSelector, "\\[@class");
+        int attributeCount = countSelectorSpecificity(xpathSelector, "\\[@");
+        int idCount = countSelectorSpecificity(xpathSelector, "\\[@id");
+        int childCount=countSelectorSpecificity(xpathSelector,"\\[\\d+");
+        int nodeCount = countSelectorSpecificity(xpathSelector, "\\/");
+        int functionCount=countSelectorSpecificity(xpathSelector,"\\(\\)");
 
-        System.out.println("XPATH:  Lenght: "+lengthScore+" attributeCount: "+attributeCount+" node count: "+nodeCount+"\n");
+        System.out.println("XPATH: attributeCount: "+attributeCount+" node count: "+nodeCount+" classCount: "+classCount+
+                " idCount: "+idCount+"childCount: "+childCount+" functionCOunt: "+functionCount+"\n");
 
         // Assegna un punteggio in base alla lunghezza, al numero di attributi e al numero di nodi del selettore
-        int complexityScore = lengthScore + attributeCount * 4 + nodeCount*2;
+        float complexityScore = (classCount*1.4f)+(attributeCount*1.4f)+(idCount*0.3f)+(childCount*1.4f)+(nodeCount*0.7f)+(functionCount*1.2f);
 
         return complexityScore;
     }
 
-    private static int countSelectorSpecificity(String cssSelector, String prefix) {
-        // Conta il numero di ID o classi presenti nel selettore CSS
-        int count = 0;
-        int startIndex = 0;
-        while (startIndex != -1) {
-            startIndex = cssSelector.indexOf(prefix, startIndex);
-            if (startIndex != -1) {
-                count++;
-                startIndex += prefix.length();
-            }
-        }
-        return count;
+    public static int countSelectorSpecificity(String input, String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(input);
+
+        return (int) matcher.results().count();
     }
 
     // Metodo per normalizzare il punteggio del selettore nell'intervallo 1-10

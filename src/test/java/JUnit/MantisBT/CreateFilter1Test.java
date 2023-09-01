@@ -81,11 +81,6 @@ public class CreateFilter1Test {
       Actions builder = new Actions(driver);
       builder.moveToElement(element).perform();
     }
-    driver.findElement(By.name("severity[]")).click();
-    {
-      WebElement dropdown = driver.findElement(By.name("severity[]"));
-      dropdown.findElement(By.xpath("//option[. = 'maggiore']")).click();
-    }
     driver.findElement(By.cssSelector(".no-float")).click();
     driver.findElement(By.name("save_query_button")).click();
     driver.findElement(By.name("query_name")).click();

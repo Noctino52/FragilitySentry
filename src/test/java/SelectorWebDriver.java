@@ -45,6 +45,12 @@ public class SelectorWebDriver implements WebDriverListener {
 	}
 
 	@Override
+	public void beforeFindElements(WebDriver driver, By locator) {
+		this.beforeFindElement(driver,locator);
+		WebDriverListener.super.beforeFindElements(driver, locator);
+	}
+
+	@Override
 	public void afterFindElement(WebDriver driver, By locator, WebElement result) {
 		WebDriverListener.super.afterFindElement(driver, locator, result);
 	}

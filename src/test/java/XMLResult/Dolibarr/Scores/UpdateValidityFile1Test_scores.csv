@@ -3,11 +3,11 @@ url,http://localhost:8080/,6.00,9.00,6.60
 Name,username,2.00,9.00,3.40
 Name,password,2.00,9.00,3.40
 Name,password,2.00,9.00,3.40
-CssSelector,.menu,8.00,4.00,7.20
+CssSelector,.menu,7.90,4.00,7.12
 LinkText,Strumenti di amministrazione,4.00,4.00,4.00
-CssSelector,.menu,8.00,8.00,8.00
+CssSelector,.menu,7.90,8.00,7.92
 LinkText,Informazioni su Dolibarr,4.00,8.00,4.80
-CssSelector,.menu,8.00,2.00,6.80
+CssSelector,.menu,7.90,2.00,6.72
 LinkText,Verifica integrità dei file,4.00,2.00,3.60
-CssSelector,input:nth-child(7),3.00,8.00,4.00
-CssSelector,.button,7.00,8.00,7.20
+CssSelector,input:nth-child(7),6.70,8.00,6.96
+CssSelector,.button,-92.10,8.00,7.92

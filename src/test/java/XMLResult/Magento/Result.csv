@@ -1,16 +1,16 @@
-Nome del test,Magento2.4.2,Magento2.4.3,Magento2.4.4,Magento2.4.5,Magento2.4.6,MetricV2,MetricV3
-createAccount1,passed,passed,passed,passed,passed,8.84,8.24
-createCheckout1,passed,passed,error,error,error,3.44,3.67
-createHelp1,passed,passed,passed,passed,passed,8.56,7.84
-createOrder1,passed,error,error,error,error,4.11,4.27
-createReturn1,passed,error,error,error,error,4.12,4.42
-deleteCart1,passed,passed,passed,passed,passed,8.45,7.84
-readDetailsProduct1,passed,passed,passed,passed,failed,5.04,5.68
-readExtension1,passed,failed,failed,failed,failed,4.19,4.19
-readPopular1,passed,passed,passed,failed,failed,4.64,4.94
-readPrivacy1,passed,passed,passed,error,error,5.38,4.40
-readProduct1,passed,passed,error,error,error,4.28,3.80
-readTemplate1,passed,passed,error,error,error,4.26,3.81
-readView1,passed,passed,passed,passed,error,5.65,5.68
-resetPassword1,passed,passed,passed,passed,passed,7.98,7.34
-updatePage1,passed,passed,passed,passed,passed,8.38,7.33
+Nome del test,Magento2.4.2,Magento2.4.3,Magento2.4.4,Magento2.4.5,Magento2.4.6,MetricV1,MetricV2,MetricV3
+createAccount1,passed,passed,passed,passed,passed,8.84,8.24,7.98
+createCheckout1,passed,passed,error,error,error,3.44,3.67,5.81
+createHelp1,passed,passed,passed,passed,passed,8.56,7.84,7.87
+createOrder1,passed,error,error,error,error,4.11,4.27,5.55
+createReturn1,passed,error,error,error,error,4.12,4.42,4.64
+deleteCart1,passed,passed,passed,passed,passed,8.45,7.84,8.90
+readDetailsProduct1,passed,passed,passed,passed,failed,5.04,5.68,4.85
+readExtension1,passed,failed,failed,failed,failed,4.19,4.19,5.36
+readPopular1,passed,passed,passed,failed,failed,4.64,4.94,5.23
+readPrivacy1,passed,passed,passed,error,error,5.38,4.40,5.83
+readProduct1,passed,passed,error,error,error,4.28,3.80,6.63
+readTemplate1,passed,passed,error,error,error,4.26,3.81,5.15
+readView1,passed,passed,passed,passed,error,5.65,5.68,4.48
+resetPassword1,passed,passed,passed,passed,passed,7.98,7.34,7.47
+updatePage1,passed,passed,passed,passed,passed,8.38,7.33,8.50

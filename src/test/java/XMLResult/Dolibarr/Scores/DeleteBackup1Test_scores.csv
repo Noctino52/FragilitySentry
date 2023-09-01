@@ -3,13 +3,13 @@ url,http://localhost:8080/,6.00,9.00,6.60
 Id,username,10.00,9.00,9.80
 Id,password,10.00,9.00,9.80
 Id,password,10.00,9.00,9.80
-CssSelector,.menu,8.00,4.00,7.20
+CssSelector,.menu,7.90,4.00,7.12
 LinkText,Strumenti di amministrazione,4.00,4.00,4.00
-CssSelector,.menu,8.00,8.00,8.00
+CssSelector,.menu,7.90,8.00,7.92
 LinkText,Backup,4.00,8.00,4.80
 Id,radio_dump_mysql_nobin,10.00,7.00,9.40
 Id,buttonGo,10.00,7.00,9.40
-XPath,//tr[@id='row-AFTER0POS1']/td[6]/a/span,5.00,7.00,5.40
+XPath,//tr[@id='row-AFTER0POS1']/td[6]/a/span,3.40,7.00,4.12
 Id,radio_dump_mysql_nobin,10.00,7.00,9.40
 Id,radio_dump_mysql,10.00,7.00,9.40
 Id,radio_dump_mysql_nobin,10.00,7.00,9.40

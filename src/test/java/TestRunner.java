@@ -138,6 +138,7 @@ public class TestRunner {
 
         char c[] = string.toCharArray();
         c[0] = Character.toLowerCase(c[0]);
+        c[1] = Character.toLowerCase(c[1]);
 
         return new String(c);
     }

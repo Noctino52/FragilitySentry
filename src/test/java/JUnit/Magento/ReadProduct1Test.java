@@ -37,9 +37,9 @@ public class ReadProduct1Test {
     //XPath troppo specifico
     driver.findElement(By.xpath("//div[contains(@class, \'nav-sections-items\') and not(contains(@class, \'mage-tabs-disabled\'))]")).click();
     driver.findElement(By.cssSelector(".nav:nth-child(5) > a")).click();
-    driver.findElement(By.id("name")).click();
-    driver.findElement(By.id("name")).sendKeys("Pera");
+    driver.findElement(By.xpath("//input[@id=\'name\']")).click();
+    driver.findElement(By.xpath("//input[@id=\'name\']")).sendKeys("Pera");
     driver.findElement(By.cssSelector(".primary > .search > span")).click();
-    driver.findElement(By.id("mode-list")).click();
+    driver.findElement(By.xpath("//a[@id=\'mode-list\']")).click();
   }
 }

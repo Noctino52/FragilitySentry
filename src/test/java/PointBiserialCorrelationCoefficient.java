@@ -27,11 +27,11 @@ public class PointBiserialCorrelationCoefficient {
             dichotomous.add(dichotomousValue);
 
             if(dichotomousValue){
-                dichotomousTrue.add(dichotomousValue);
+                dichotomousTrue.add(true);
                 continiusTrue.add(score);
             }
             else{
-                dichotomousFalse.add(dichotomousValue);
+                dichotomousFalse.add(false);
                 continiusFalse.add(score);
             }
         }

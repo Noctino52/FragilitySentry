@@ -1,16 +1,16 @@
-Nome del test,MantisBT18,MantisBT19,MantisBT20,MantisBT21,MantisBT22,MetricV2,MetricV3
-addTag1,passed,passed,passed,error,error,5.40,3.54
-stopFilter1,passed,passed,error,error,error,4.70,4.75
-createFilter1,passed,passed,error,error,error,4.81,3.90
-createNote1,passed,passed,passed,error,error,4.40,5.40
-createProject1,passed,passed,passed,passed,passed,8.23,7.64
-createReport1,passed,passed,passed,passed,passed,8.29,7.62
-createTag1,passed,passed,passed,passed,failed,5.10,6.10
-createUser1,passed,error,error,error,error,6.07,4.43
-readAdminInfo1,passed,error,error,error,error,5.33,4.39
-updateUserInfo1,passed,failed,failed,failed,failed,4.29,3.49
-updateWorkflow1,passed,passed,passed,passed,error,6.21,5.59
-deleteNote1,passed,passed,passed,passed,passed,8.37,7.40
-deleteProject1,passed,passed,error,error,error,4.61,4.51
-deleteReport1,passed,passed,passed,passed,passed,8.35,7.45
-deleteUser1,passed,passed,passed,passed,passed,8.44,7.01
+Nome del test,MantisBT18,MantisBT19,MantisBT20,MantisBT21,MantisBT22,MetricV1,MetricV2,MetricV3
+addTag1,passed,passed,passed,error,error,5.40,3.54,4.58
+astopFilter1,passed,passed,error,error,error,4.70,4.75,5.53
+createFilter1,passed,passed,error,error,error,4.81,3.90,5.03
+createNote1,passed,passed,passed,error,error,4.40,5.40,6.01
+createProject1,passed,passed,passed,passed,passed,8.23,7.64,8.15
+createReport1,passed,passed,passed,passed,passed,8.29,7.62,8.48
+createTag1,passed,passed,passed,passed,failed,5.10,6.10,7.24
+createUser1,passed,error,error,error,error,6.07,4.43,4.94
+readAdminInfo1,passed,error,error,error,error,5.33,4.39,4.13
+updateUserInfo1,passed,failed,failed,failed,failed,4.29,3.49,4.78
+updateWorkflow1,passed,passed,passed,passed,error,6.21,5.59,7.05
+zdeleteNote1,passed,passed,passed,passed,passed,8.37,7.40,9.06
+zdeleteProject1,passed,passed,error,error,error,4.61,4.51,5.14
+zdeleteReport1,passed,passed,passed,passed,passed,8.35,7.45,8.15
+zdeleteUser1,passed,passed,passed,passed,passed,8.44,7.01,8.08

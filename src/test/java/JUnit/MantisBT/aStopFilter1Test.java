@@ -31,7 +31,7 @@ public class aStopFilter1Test {
     driver.quit();
   }
   @Test
-  public void aStopFilter1() throws InterruptedException {
+  public void astopFilter1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(766, 640));
     driver.findElement(By.name("username")).sendKeys("Chris95");
@@ -45,10 +45,10 @@ public class aStopFilter1Test {
     Thread.sleep(1000);
     driver.findElement(By.id("show_severity_filter")).click();
     Thread.sleep(1000);
-    driver.findElement(By.name("severity[]")).click();
+    driver.findElement(By.cssSelector("#show_severity_filter_target > .input-xs")).click();
     Thread.sleep(1000);
     {
-      WebElement dropdown = driver.findElement(By.name("severity[]"));
+      WebElement dropdown = driver.findElement(By.cssSelector("#show_severity_filter_target > .input-xs"));
       dropdown.findElement(By.xpath("//option[. = 'maggiore']")).click();
     }
     driver.findElement(By.cssSelector(".no-float")).click();

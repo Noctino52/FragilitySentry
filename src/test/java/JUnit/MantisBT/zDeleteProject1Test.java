@@ -32,7 +32,7 @@ public class zDeleteProject1Test {
     driver.quit();
   }
   @Test
-  public void zDeleteProject1() throws InterruptedException {
+  public void zdeleteProject1() throws InterruptedException {
     driver.get("http://localhost:8989/login_page.php");
     driver.manage().window().setSize(new Dimension(945, 1020));
     driver.findElement(By.name("username")).click();
@@ -41,7 +41,7 @@ public class zDeleteProject1Test {
     driver.findElement(By.name("password")).click();
     driver.findElement(By.name("password")).sendKeys("root");
     driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-    driver.findElement(By.id("menu-toggler")).click();
+    driver.findElement(By.xpath("//button[@id=\'menu-toggler\']")).click();
     Thread.sleep(1000);
     {
       WebElement element = driver.findElement(By.cssSelector(".sidebar-toggle"));

@@ -7,10 +7,6 @@ import java.util.Locale;
 
 public class JUnitRunner {
     //TODO: Phormer Tests
-    //TODO: Coefficiente di correlazione
-    //TODO: Trova altri fattori di complessità per CSS e XPATH
-    //TODO: Unire il calcolo complessitrà di CSS e XPath
-    //TODO: Implementare una metrica che tiene conto della pagina  e del selettore insieme
 
     static String SoftwareUsed="Dolibarr";
 
