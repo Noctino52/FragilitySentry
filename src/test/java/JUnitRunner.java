@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class JUnitRunner {
-    //TODO: Phormer Tests
 
     static String SoftwareUsed="Dolibarr";
 
@@ -33,7 +32,7 @@ public class JUnitRunner {
         }
         String directory="src/test/java/XMLResult/"+SoftwareUsed+"/Result.csv";
         createSelectorScoreFiles(testsJudged,df);
-        writeInResult(testsJudged,directory,"MetricV3",df);
+        writeInResult(testsJudged,directory,"Metric",df);
     }
     public static void writeInResult(List<Test> testsJudge, String csvFileName, String columnName,DecimalFormat df) {
         try {

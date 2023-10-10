@@ -63,7 +63,6 @@ public class Judge {
             case "XPath":
                 complexitySelectorScore=SelectorComplexityEvaluator.evaluateXPathSelectorComplexity(selectorString,document);
                 if(!isXPathAbsolute(selector.getSelector()))elementScore-=1;
-
                 break;
             case "TagName":
                 complexitySelectorScore=SelectorComplexityEvaluator.evaluateTagNameSelectorComplexity(selectorString);

@@ -34,7 +34,7 @@ public class Selector {
 
     private String createSelector(By locator) {
         String stringLocator=locator.toString();
-        int index = stringLocator.indexOf(":"); // Trova l'indice del primo carattere ":"
+        int index = stringLocator.indexOf(":");
         String selectorString = stringLocator.substring(index + 2);
         System.out.println(selectorString);
         return selectorString;

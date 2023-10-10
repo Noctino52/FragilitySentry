@@ -105,6 +105,14 @@ public class TestRunner {
         listener.setDocumentPages(new ArrayList<>());
     }
 
+    public static <T> T create(Class<T> someClass) {
+        try {
+            return someClass.getDeclaredConstructor().newInstance();
+        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
+            throw new RuntimeException("Failed to create instance of class " + someClass.getName(), ex);
+        }
+    }
+
 
     private String getClassName(Test test) {
         String nomeTest;
@@ -121,14 +129,6 @@ public class TestRunner {
         nomeMetodo=(nomeMetodo.substring(nomeMetodo.lastIndexOf(".") + 1).trim());
         nomeMetodo=decapitalize(nomeMetodo);
         return nomeMetodo;
-    }
-
-    public static <T> T create(Class<T> someClass) {
-        try {
-            return someClass.getDeclaredConstructor().newInstance();
-        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) {
-            throw new RuntimeException("Failed to create instance of class " + someClass.getName(), ex);
-        }
     }
 
     public static String decapitalize(String string) {
