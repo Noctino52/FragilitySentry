@@ -18,6 +18,6 @@ Fornisce una metriche per migliorare la robustezza dei test, nonchè di tutte le
 
 ### Linee guida per l'installazione
 
-1. Installa gli applicativi con i rispettivi file "docker-compose" da PowerShell gli applicativi di sample
+1. Installa con i rispettivi file "docker-compose" da PowerShell gli applicativi di sample
 2. Clona il repository
 3. Configurare il chromedriver per essere eseguito nell'IDE utilizzato
