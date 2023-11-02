@@ -4,7 +4,7 @@ FragilitySentry is a tool that helps evaluate the robustness of end-to-end test 
 It analyzes test cases to identify potential points of failure and provides insights to improve their reliability.
 
 Using the Selenium framework for writing and executing test case, FragilitySentry take note of the page visited and the locator used to refer of the html elements.
-If the istruction that compose the test used comples locator and page, more the score of the test getting worse and vicerversa.
+If the istruction that compose the test used complex locator and page, more the score of the test getting worse and vicerversa.
 
 The result of our metric have been testing in 3 sample web application, MantisBT, Dolibarr and Magento, with a custom set of test case.
 
